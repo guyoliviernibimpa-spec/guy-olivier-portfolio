@@ -11,12 +11,12 @@
   >
 
   <title>
-    Guy-Olivier Nibimpa | Communication digitale & création visuelle
+    Guy-Olivier Nibimpa — Communication digitale & création visuelle
   </title>
 
   <meta
     name="description"
-    content="Portfolio de Guy-Olivier Nibimpa — Communication digitale, création visuelle, photographie, médias numériques et analyse des usages."
+    content="Portfolio de Guy-Olivier Nibimpa — communication digitale, design graphique, photographie, médias numériques et analyse des usages."
   >
 
   <meta
@@ -25,14 +25,57 @@
   >
 
   <meta
+    name="color-scheme"
+    content="light"
+  >
+
+
+  <!-- OPEN GRAPH / LINKEDIN -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
     property="og:title"
-    content="Guy-Olivier Nibimpa | Portfolio"
+    content="Guy-Olivier Nibimpa — Portfolio"
   >
 
   <meta
     property="og:description"
-    content="Communication digitale, création visuelle, photographie et médias numériques."
+    content="Communication digitale · Design graphique · Photographie · Médias numériques"
   >
+
+  <meta
+    property="og:url"
+    content="https://guyoliviernibimpa-spec.github.io/guy-olivier-portfolio/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://guyoliviernibimpa-spec.github.io/guy-olivier-portfolio/assets/profile/guy-olivier-profile.jpg"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+
+  <link
+    rel="canonical"
+    href="https://guyoliviernibimpa-spec.github.io/guy-olivier-portfolio/"
+  >
+
+
+  <!-- FAVICON GO -->
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%230A66C2'/%3E%3Ctext x='50' y='61' font-family='Arial,sans-serif' font-size='38' font-weight='700' text-anchor='middle' fill='white'%3EGO%3C/text%3E%3C/svg%3E"
+  >
+
 
   <!-- TYPOGRAPHIES -->
 
@@ -52,6 +95,7 @@
     rel="stylesheet"
   >
 
+
   <!-- CSS -->
 
   <link
@@ -66,359 +110,434 @@
 <body>
 
 
+  <!-- BARRE DE PROGRESSION -->
 
-<!-- ======================================================
-     HEADER
-====================================================== -->
+  <div
+    class="scroll-progress"
+    aria-hidden="true"
+  >
+    <span id="scrollProgress"></span>
+  </div>
 
-<header class="site-header">
 
-  <div class="container nav-wrapper">
+  <a
+    class="skip-link"
+    href="#contenu"
+  >
+    Aller au contenu
+  </a>
 
-    <a
-      href="#accueil"
-      class="brand"
-      aria-label="Accueil — Guy-Olivier Nibimpa"
-    >
 
-      <div class="brand-logo">
-        GO
-      </div>
 
-      <div class="brand-text">
+  <!-- ======================================================
+       HEADER
+  ====================================================== -->
 
-        <strong>
-          Guy-Olivier Nibimpa
-        </strong>
+  <header class="site-header">
 
-        <span>
-          Communication digitale & création visuelle
+    <div class="container header-inner">
+
+
+      <a
+        class="brand"
+        href="#accueil"
+        aria-label="Accueil — Guy-Olivier Nibimpa"
+      >
+
+        <span class="brand-mark">
+          GO
         </span>
 
-      </div>
+        <span class="brand-name">
+          Guy-Olivier Nibimpa
+        </span>
 
-    </a>
-
-
-
-    <button
-      class="menu-button"
-      aria-label="Ouvrir le menu"
-      aria-expanded="false"
-    >
-
-      <span></span>
-      <span></span>
-      <span></span>
-
-    </button>
+      </a>
 
 
+
+      <nav
+        class="desktop-nav"
+        aria-label="Navigation principale"
+      >
+
+        <a href="#profil">
+          Profil
+        </a>
+
+        <a href="#experience">
+          Expérience
+        </a>
+
+        <a href="#projets">
+          Projets
+        </a>
+
+        <a href="#recherche">
+          Recherche
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-pill"
+        >
+          Contact
+        </a>
+
+      </nav>
+
+
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        aria-label="Ouvrir le menu"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+
+
+    <!-- MENU MOBILE -->
 
     <nav
-      class="navigation"
-      aria-label="Navigation principale"
+      class="mobile-menu"
+      id="mobileMenu"
+      aria-label="Navigation mobile"
     >
 
       <a href="#profil">
+        <span>01</span>
         Profil
       </a>
 
-      <a href="#expertise">
-        Expertise
-      </a>
-
       <a href="#experience">
+        <span>02</span>
         Expérience
       </a>
 
       <a href="#projets">
+        <span>03</span>
         Projets
       </a>
 
       <a href="#recherche">
+        <span>04</span>
         Recherche
       </a>
 
-      <a
-        href="#contact"
-        class="nav-contact"
-      >
+      <a href="#contact">
+        <span>05</span>
         Contact
       </a>
 
     </nav>
 
-  </div>
-
-</header>
+  </header>
 
 
 
 
 
-<main>
+  <main id="contenu">
 
 
 
-<!-- ======================================================
-     HERO
-====================================================== -->
+    <!-- ======================================================
+         HERO
+    ====================================================== -->
 
-<section
-  class="hero"
-  id="accueil"
->
+    <section
+      class="hero"
+      id="accueil"
+    >
 
-  <div class="container hero-grid">
+      <div
+        class="hero-grid-lines"
+        aria-hidden="true"
+      ></div>
 
 
-    <div class="hero-content reveal">
 
-      <div class="badge">
+      <div class="container hero-layout">
 
-        <span class="badge-dot"></span>
 
-        Paris · Master 2 · Communication & médias numériques
+        <!-- HERO TEXTE -->
+
+        <div class="hero-copy reveal">
+
+
+          <div class="hero-eyebrow">
+
+            <span class="status-dot"></span>
+
+            Paris · Master 2 · Disponible dès janvier 2027
+
+          </div>
+
+
+
+          <p class="hero-kicker">
+
+            Communication digitale · Design · Médias numériques
+
+          </p>
+
+
+
+          <h1>
+
+            <span class="hero-name">
+              Guy-Olivier
+            </span>
+
+            <span class="hero-name hero-name-outline">
+              Nibimpa
+            </span>
+
+          </h1>
+
+
+
+          <p class="hero-statement">
+
+            Je transforme des sujets complexes en
+
+            <strong>
+              contenus clairs, visuels et engageants.
+            </strong>
+
+          </p>
+
+
+
+          <div class="hero-actions">
+
+
+            <a
+              class="btn btn-primary"
+              href="#projets"
+            >
+
+              Explorer mes projets
+
+              <span>
+                ↘
+              </span>
+
+            </a>
+
+
+
+            <a
+              class="btn btn-ghost"
+              href="assets/cv/cv-guy-olivier-nibimpa.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Voir mon CV
+
+              <span>
+                ↗
+              </span>
+
+            </a>
+
+          </div>
+
+
+
+          <div class="hero-proof">
+
+
+            <div>
+
+              <span>
+                Positionnement
+              </span>
+
+              <strong>
+                Communication & création
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Approche
+              </span>
+
+              <strong>
+                Stratégique + visuelle
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Base
+              </span>
+
+              <strong>
+                Paris, France
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+        <!-- HERO PHOTO -->
+
+        <div class="hero-art reveal">
+
+
+          <div class="portrait-frame">
+
+
+            <div class="portrait-number">
+              01
+            </div>
+
+
+            <img
+              src="assets/profile/guy-olivier-profile.jpg"
+              alt="Portrait professionnel de Guy-Olivier Nibimpa"
+              class="hero-portrait"
+              fetchpriority="high"
+            >
+
+
+            <div class="portrait-caption">
+
+              <span>
+                PORTFOLIO / 2026
+              </span>
+
+              <strong>
+                Communication digitale<br>
+                & création visuelle
+              </strong>
+
+            </div>
+
+          </div>
+
+
+
+          <span class="orbit-tag orbit-tag-1">
+            STRATÉGIE
+          </span>
+
+          <span class="orbit-tag orbit-tag-2">
+            DESIGN
+          </span>
+
+          <span class="orbit-tag orbit-tag-3">
+            PHOTO
+          </span>
+
+          <span class="orbit-tag orbit-tag-4">
+            MÉDIAS
+          </span>
+
+        </div>
 
       </div>
 
 
-      <h1>
 
-        Je transforme les idées en
+      <div
+        class="hero-bottom container"
+        aria-hidden="true"
+      >
 
         <span>
-          contenus clairs, visuels et engageants.
+          Scroll to explore
         </span>
 
-      </h1>
-
-
-      <p class="hero-description">
-
-        Étudiant en Master 2 Information et Communication
-        à l’Institut Catholique de Paris, je développe
-        des projets mêlant stratégie éditoriale,
-        création visuelle, social media, photographie
-        et analyse des usages numériques.
-
-      </p>
-
-
-      <div class="hero-buttons">
-
-        <a
-          href="#projets"
-          class="button button-primary"
-        >
-          Découvrir mes projets
-        </a>
-
-
-        <a
-          href="assets/cv/cv-guy-olivier-nibimpa.pdf"
-          class="button button-secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Voir mon CV ↓
-        </a>
-
-      </div>
-
-
-      <div class="availability">
-
-        <span class="availability-dot"></span>
-
-        <p>
-          Disponible pour un stage de 6 mois à partir de janvier 2027
-        </p>
-
-      </div>
-
-
-      <div class="hero-stats">
-
-        <div>
-
-          <strong>
-            Stratégie
-          </strong>
-
-          <span>
-            Communication & éditorial
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <strong>
-            Création
-          </strong>
-
-          <span>
-            Design · Photo · Vidéo
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <strong>
-            Analyse
-          </strong>
-
-          <span>
-            Médias & usages numériques
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-
-    <!-- PHOTO PRINCIPALE -->
-
-    <div class="hero-visual reveal">
-
-      <div class="profile-portrait-wrapper">
-
-        <div class="profile-circle">
-
-          <img
-            src="assets/profile/guy-olivier-profile.jpg"
-            alt="Portrait professionnel de Guy-Olivier Nibimpa"
-            class="profile-portrait"
-          >
-
-        </div>
-
-
-        <div class="portrait-ring"></div>
-
-      </div>
-
-
-      <div class="floating-tag tag-one">
-        STRATÉGIE
-      </div>
-
-      <div class="floating-tag tag-two">
-        DESIGN
-      </div>
-
-      <div class="floating-tag tag-three">
-        MÉDIAS
-      </div>
-
-
-      <div class="portrait-signature">
-
-        <small>
-          GUY-OLIVIER NIBIMPA
-        </small>
-
-        <strong>
-          Communication digitale
-        </strong>
+        <span class="scroll-line"></span>
 
         <span>
-          Paris · France
+          Paris · FR
         </span>
 
       </div>
 
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
 
 
 
 
-<!-- ======================================================
-     BANDEAU
-====================================================== -->
+    <!-- ======================================================
+         MARQUEE
+    ====================================================== -->
 
-<div class="marquee">
+    <div
+      class="discipline-marquee"
+      aria-label="Domaines d'expertise"
+    >
 
-  <div class="marquee-content">
+      <div class="marquee-track">
 
-    <span>Communication digitale</span>
-    <i>✦</i>
+        <span>Communication digitale</span>
+        <i>✦</i>
 
-    <span>Design graphique</span>
-    <i>✦</i>
+        <span>Design graphique</span>
+        <i>✦</i>
 
-    <span>Social media</span>
-    <i>✦</i>
+        <span>Social media</span>
+        <i>✦</i>
 
-    <span>Photographie</span>
-    <i>✦</i>
+        <span>Photographie</span>
+        <i>✦</i>
 
-    <span>Montage vidéo</span>
-    <i>✦</i>
+        <span>Montage vidéo</span>
+        <i>✦</i>
 
-    <span>Rédaction web</span>
-    <i>✦</i>
+        <span>Rédaction web</span>
+        <i>✦</i>
 
-    <span>Analyse des usages numériques</span>
-    <i>✦</i>
+        <span>Analyse des usages</span>
+        <i>✦</i>
 
-    <span>Communication digitale</span>
-    <i>✦</i>
+        <span>Communication digitale</span>
+        <i>✦</i>
 
-    <span>Design graphique</span>
-    <i>✦</i>
+        <span>Design graphique</span>
+        <i>✦</i>
 
-    <span>Social media</span>
-    <i>✦</i>
+        <span>Social media</span>
+        <i>✦</i>
 
-  </div>
+        <span>Photographie</span>
+        <i>✦</i>
 
-</div>
+        <span>Montage vidéo</span>
+        <i>✦</i>
 
+        <span>Rédaction web</span>
+        <i>✦</i>
 
-
-
-
-<!-- ======================================================
-     PROFIL
-====================================================== -->
-
-<section
-  class="section"
-  id="profil"
->
-
-  <div class="container">
-
-    <div class="section-heading reveal">
-
-      <span class="section-number">
-        01
-      </span>
-
-      <div>
-
-        <p class="section-label">
-          À propos
-        </p>
-
-        <h2>
-          Créer, expliquer et donner du sens.
-        </h2>
+        <span>Analyse des usages</span>
+        <i>✦</i>
 
       </div>
 
@@ -426,1934 +545,2088 @@
 
 
 
-    <div class="about-grid">
 
 
-      <div class="about-content reveal">
+    <!-- ======================================================
+         PROFIL
+    ====================================================== -->
 
-        <p class="about-intro">
+    <section
+      class="section intro-section"
+      id="profil"
+    >
 
-          Mon travail se situe au croisement
-          de la communication digitale,
-          de la création visuelle
-          et de l’analyse des médias numériques.
-
-        </p>
-
-
-        <p>
-
-          J’ai développé mon expérience en France
-          et à l’international auprès d’organisations
-          comme BL évolution, UNICEF Burundi,
-          WARESA, BUJAHUB et la Fondation Lucien Paye.
-
-        </p>
+      <div class="container">
 
 
-        <p>
-
-          J’aime particulièrement transformer
-          des sujets complexes en contenus accessibles,
-          trouver le bon angle éditorial
-          et construire des formats adaptés
-          aux publics auxquels ils s’adressent.
-
-        </p>
-
-
-        <a
-          href="assets/cv/cv-guy-olivier-nibimpa.pdf"
-          class="text-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Consulter mon CV complet ↗
-        </a>
-
-      </div>
-
-
-
-
-      <div class="profile-card reveal">
-
-
-        <div class="profile-row">
+        <div class="section-marker reveal">
 
           <span>
-            Formation
-          </span>
-
-          <strong>
-            Master 2 Information & Communication
-          </strong>
-
-        </div>
-
-
-        <div class="profile-row">
-
-          <span>
-            Parcours
-          </span>
-
-          <strong>
-            Écosystèmes médiatiques & transition numérique
-          </strong>
-
-        </div>
-
-
-        <div class="profile-row">
-
-          <span>
-            Établissement
-          </span>
-
-          <strong>
-            Institut Catholique de Paris
-          </strong>
-
-        </div>
-
-
-        <div class="profile-row">
-
-          <span>
-            Formation précédente
-          </span>
-
-          <strong>
-            Licence Journalisme & Communication
-          </strong>
-
-        </div>
-
-
-        <div class="profile-row">
-
-          <span>
-            Localisation
-          </span>
-
-          <strong>
-            Paris, France
-          </strong>
-
-        </div>
-
-
-        <div class="profile-row">
-
-          <span>
-            Langues
-          </span>
-
-          <strong>
-            Français · Anglais · Kiswahili · Kirundi
-          </strong>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-
-<!-- ======================================================
-     EXPERTISE
-====================================================== -->
-
-<section
-  class="section expertise-section"
-  id="expertise"
->
-
-  <div class="container">
-
-    <div class="section-heading light reveal">
-
-      <span class="section-number">
-        02
-      </span>
-
-      <div>
-
-        <p class="section-label">
-          Expertise
-        </p>
-
-        <h2>
-          De l’idée à la diffusion.
-        </h2>
-
-      </div>
-
-    </div>
-
-
-
-
-    <div class="expertise-grid">
-
-
-      <article class="expertise-card reveal">
-
-        <span class="expertise-number">
-          01
-        </span>
-
-        <h3>
-          Communication digitale
-        </h3>
-
-        <p>
-
-          Stratégie éditoriale, rédaction,
-          campagnes, newsletters,
-          contenus web et communication institutionnelle.
-
-        </p>
-
-        <div class="tags">
-
-          <span>Stratégie</span>
-          <span>Éditorial</span>
-          <span>Rédaction</span>
-
-        </div>
-
-      </article>
-
-
-
-
-      <article class="expertise-card reveal">
-
-        <span class="expertise-number">
-          02
-        </span>
-
-        <h3>
-          Social media
-        </h3>
-
-        <p>
-
-          Création de contenus,
-          animation des réseaux sociaux,
-          calendrier éditorial,
-          reporting et analyse des performances.
-
-        </p>
-
-        <div class="tags">
-
-          <span>LinkedIn</span>
-          <span>Instagram</span>
-          <span>Analytics</span>
-
-        </div>
-
-      </article>
-
-
-
-
-      <article class="expertise-card reveal">
-
-        <span class="expertise-number">
-          03
-        </span>
-
-        <h3>
-          Design & création
-        </h3>
-
-        <p>
-
-          Carrousels, infographies,
-          affiches, newsletters,
-          photographie, présentations
-          et montage vidéo.
-
-        </p>
-
-        <div class="tags">
-
-          <span>Adobe</span>
-          <span>Canva</span>
-          <span>Photo</span>
-          <span>Vidéo</span>
-
-        </div>
-
-      </article>
-
-
-
-
-      <article class="expertise-card reveal">
-
-        <span class="expertise-number">
-          04
-        </span>
-
-        <h3>
-          Médias & recherche
-        </h3>
-
-        <p>
-
-          Analyse des usages numériques,
-          veille, nouveaux médias,
-          méthodologies de recherche
-          et analyse de contenus.
-
-        </p>
-
-        <div class="tags">
-
-          <span>Recherche</span>
-          <span>Veille</span>
-          <span>Usages</span>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-
-<!-- ======================================================
-     EXPERIENCE
-====================================================== -->
-
-<section
-  class="section"
-  id="experience"
->
-
-  <div class="container">
-
-    <div class="section-heading reveal">
-
-      <span class="section-number">
-        03
-      </span>
-
-      <div>
-
-        <p class="section-label">
-          Expérience
-        </p>
-
-        <h2>
-          Un parcours entre communication, création et terrain.
-        </h2>
-
-      </div>
-
-    </div>
-
-
-
-
-    <div class="timeline">
-
-
-      <!-- FLP -->
-
-      <article class="timeline-item reveal">
-
-        <div class="timeline-date">
-          Sept. 2025 — Présent
-        </div>
-
-        <div>
-
-          <div class="timeline-title">
-
-            <h3>
-              Fondation Lucien Paye · CIUP
-            </h3>
-
-            <span>
-              Paris
-            </span>
-
-          </div>
-
-          <p class="job">
-            Responsable de la newsletter
-          </p>
-
-          <p class="timeline-description">
-
-            Planification éditoriale,
-            coordination des contributeurs,
-            création de visuels,
-            préparation et diffusion
-            de la newsletter et suivi des résultats.
-
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-
-      <!-- BL -->
-
-      <article class="timeline-item reveal">
-
-        <div class="timeline-date">
-          Fév. — Juil. 2026
-        </div>
-
-        <div>
-
-          <div class="timeline-title">
-
-            <h3>
-              BL évolution
-            </h3>
-
-            <span>
-              Paris
-            </span>
-
-          </div>
-
-          <p class="job">
-            Stagiaire Communication & Graphisme
-          </p>
-
-          <p class="timeline-description">
-
-            Création de contenus éditoriaux et visuels,
-            articles web, carrousels LinkedIn,
-            infographies, supports commerciaux,
-            campagnes, webinaires
-            et communication événementielle.
-
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-
-      <!-- UNICEF -->
-
-      <article class="timeline-item reveal">
-
-        <div class="timeline-date">
-          Juin — Août 2025
-        </div>
-
-        <div>
-
-          <div class="timeline-title">
-
-            <h3>
-              UNICEF Burundi
-            </h3>
-
-            <span>
-              Bujumbura
-            </span>
-
-          </div>
-
-          <p class="job">
-            Stagiaire professionnel en Communication
-          </p>
-
-          <p class="timeline-description">
-
-            Rédaction d’articles et contenus digitaux,
-            couverture photographique d’activités de terrain,
-            publications social media
-            et appui aux campagnes de sensibilisation.
-
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-
-      <!-- WARESA -->
-
-      <article class="timeline-item reveal">
-
-        <div class="timeline-date">
-          Fév. 2024 — Juin 2025
-        </div>
-
-        <div>
-
-          <div class="timeline-title">
-
-            <h3>
-              WARESA
-            </h3>
-
-            <span>
-              À distance · Séoul
-            </span>
-
-          </div>
-
-          <p class="job">
-            Communication & Design
-          </p>
-
-          <p class="timeline-description">
-
-            Création de supports graphiques,
-            campagnes événementielles,
-            contenus social media
-            et déclinaison de l’identité visuelle
-            de l’organisation.
-
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-
-      <!-- BUJAHUB -->
-
-      <article class="timeline-item reveal">
-
-        <div class="timeline-date">
-          Sept. — Oct. 2023
-        </div>
-
-        <div>
-
-          <div class="timeline-title">
-
-            <h3>
-              BUJAHUB
-            </h3>
-
-            <span>
-              Bujumbura
-            </span>
-
-          </div>
-
-          <p class="job">
-            Stagiaire Communication
-          </p>
-
-          <p class="timeline-description">
-
-            Création de contenus,
-            animation des réseaux sociaux,
-            photographie d’ateliers
-            et participation à la stratégie
-            de communication du hub.
-
-          </p>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-
-<!-- ======================================================
-     PROJETS
-====================================================== -->
-
-<section
-  class="section projects-section"
-  id="projets"
->
-
-  <div class="container">
-
-
-    <div class="section-heading reveal">
-
-      <span class="section-number">
-        04
-      </span>
-
-      <div>
-
-        <p class="section-label">
-          Portfolio
-        </p>
-
-        <h2>
-          Une sélection de réalisations.
-        </h2>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="projects-intro reveal">
-
-      <p>
-
-        Communication éditoriale, infographies,
-        campagnes digitales, photographie,
-        communication événementielle :
-        cette sélection présente différents formats
-        réalisés au cours de mes expériences.
-
-      </p>
-
-    </div>
-
-
-
-
-    <!-- ==================================================
-         BL ÉVOLUTION
-    ================================================== -->
-
-    <div class="portfolio-group reveal">
-
-      <div class="portfolio-group-heading">
-
-        <div>
-
-          <span class="company-index">
             01
           </span>
 
-          <p class="project-company">
-            BL évolution · Paris
-          </p>
-
-          <h3>
-            Communication & création visuelle
-          </h3>
-
-        </div>
-
-        <p>
-
-          Contenus éditoriaux,
-          carrousels LinkedIn,
-          infographies, campagnes,
-          webinaires et supports événementiels.
-
-        </p>
-
-      </div>
-
-
-
-
-      <!-- SBTI -->
-
-      <article class="case-study case-study-featured">
-
-        <div class="case-study-cover">
-
-          <img
-            src="assets/projects/bl-evolution/sbti/sbti-carousel-01.png"
-            alt="Carrousel SBTi Net-Zero V2.0 réalisé pour BL évolution"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="case-study-content">
-
-          <span class="case-label">
-            Projet sélectionné
+          <span>
+            Profil
           </span>
 
-          <h4>
-            SBTi Net-Zero V2.0
-          </h4>
+          <span class="marker-line"></span>
 
-          <p>
+        </div>
 
-            Création de contenus visuels
-            destinés à rendre plus accessible
-            l’évolution du standard Net-Zero :
-            carrousel, infographies
-            et hiérarchisation d’informations techniques.
 
-          </p>
 
-          <div class="project-tags">
+        <div class="intro-grid">
 
-            <span>Infographie</span>
-            <span>Vulgarisation</span>
-            <span>LinkedIn</span>
-            <span>Design éditorial</span>
+
+          <div class="intro-title reveal">
+
+            <p class="mega-copy">
+
+              Créer des contenus qui
+
+              <span>
+                attirent l’attention
+              </span>,
+
+              mais surtout qui
+
+              <span>
+                font comprendre.
+              </span>
+
+            </p>
+
+          </div>
+
+
+
+          <div class="intro-copy reveal">
+
+
+            <p class="lead">
+
+              Étudiant en Master 2 Information et Communication
+              à l’Institut Catholique de Paris,
+              je travaille au croisement de la communication digitale,
+              du design éditorial et de l’analyse des usages numériques.
+
+            </p>
+
+
+            <p>
+
+              Mes expériences en France et à l’international
+              m’ont amené à produire des contenus institutionnels,
+              des campagnes social media, des infographies,
+              des photographies, des newsletters
+              et des supports événementiels.
+
+            </p>
+
+
+            <a
+              class="inline-link"
+              href="assets/cv/cv-guy-olivier-nibimpa.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Consulter mon parcours complet
+
+              <span>
+                ↗
+              </span>
+
+            </a>
 
           </div>
 
         </div>
 
 
-        <div class="case-gallery">
-
-          <figure>
-
-            <img
-              src="assets/projects/bl-evolution/sbti/sbti-infographie-01.png"
-              alt="Infographie SBTi Net-Zero V2.0"
-              loading="lazy"
-            >
-
-          </figure>
 
 
-          <figure>
+        <div class="profile-facts reveal">
 
-            <img
-              src="assets/projects/bl-evolution/sbti/sbti-infographie-02.png"
-              alt="Infographie sur les scopes 1, 2 et 3"
-              loading="lazy"
-            >
 
-          </figure>
+          <article>
+
+            <span>
+              Formation
+            </span>
+
+            <strong>
+              Master 2 Information & Communication
+            </strong>
+
+            <small>
+              Institut Catholique de Paris
+            </small>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              Parcours
+            </span>
+
+            <strong>
+              Écosystèmes médiatiques & transition numérique
+            </strong>
+
+            <small>
+              2025 — 2027
+            </small>
+
+          </article>
+
+
+
+          <article>
+
+            <span>
+              Langues
+            </span>
+
+            <strong>
+              Français · Anglais · Kiswahili · Kirundi
+            </strong>
+
+            <small>
+              Communication interculturelle
+            </small>
+
+          </article>
 
         </div>
-
-      </article>
-
-
-
-
-      <div class="project-mini-grid">
-
-
-        <!-- VSME -->
-
-        <article class="project-mini">
-
-          <img
-            src="assets/projects/bl-evolution/vsme/vsme-cover.png"
-            alt="Projet VSME réalisé pour BL évolution"
-            loading="lazy"
-          >
-
-          <div>
-
-            <span>
-              Campagne éditoriale
-            </span>
-
-            <h4>
-              VSME
-            </h4>
-
-            <p>
-              Déclinaison de contenus
-              pour expliquer et valoriser
-              les enjeux de la VSME.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-
-        <!-- SOCIETE MISSION -->
-
-        <article class="project-mini">
-
-          <img
-            src="assets/projects/bl-evolution/societe-a-mission/societe-a-mission-cover.png"
-            alt="Carrousel Société à mission"
-            loading="lazy"
-          >
-
-          <div>
-
-            <span>
-              Social media
-            </span>
-
-            <h4>
-              Société à mission
-            </h4>
-
-            <p>
-              Conception d’un carrousel
-              pédagogique adapté
-              aux usages LinkedIn.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-
-        <!-- PRODURABLE -->
-
-        <article class="project-mini">
-
-          <img
-            src="assets/projects/bl-evolution/produrable/produrable-cover.png"
-            alt="Communication Produrable réalisée chez BL évolution"
-            loading="lazy"
-          >
-
-          <div>
-
-            <span>
-              Événementiel
-            </span>
-
-            <h4>
-              PRODURABLE
-            </h4>
-
-            <p>
-              Création de visuels
-              pour ateliers, communication
-              événementielle et réseaux sociaux.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-
-        <!-- WEBINAIRES -->
-
-        <article class="project-mini">
-
-          <img
-            src="assets/projects/bl-evolution/webinaires-sbf120/webinaires-cover.png"
-            alt="Cycle de webinaires SBF120"
-            loading="lazy"
-          >
-
-          <div>
-
-            <span>
-              Webinaire
-            </span>
-
-            <h4>
-              Cycle SBF120
-            </h4>
-
-            <p>
-              Supports graphiques
-              et communication digitale
-              autour d’un cycle de webinaires.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-
-        <!-- ADAPTATION -->
-
-        <article class="project-mini">
-
-          <img
-            src="assets/projects/bl-evolution/adaptation-climatique/adaptation-infographie-01.png"
-            alt="Infographie sur l’adaptation climatique"
-            loading="lazy"
-          >
-
-          <div>
-
-            <span>
-              Infographie
-            </span>
-
-            <h4>
-              Adaptation climatique
-            </h4>
-
-            <p>
-              Traduction graphique
-              de contenus techniques
-              autour des enjeux d’adaptation.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-
-        <!-- INSIGHTS -->
-
-        <article class="project-mini">
-
-          <img
-            src="assets/projects/bl-evolution/insights/insight-business-model.png"
-            alt="Insight Business Model réalisé pour BL évolution"
-            loading="lazy"
-          >
-
-          <div>
-
-            <span>
-              Insight
-            </span>
-
-            <h4>
-              Business Model
-            </h4>
-
-            <p>
-              Mise en forme éditoriale
-              et visuelle d’insights
-              destinés aux entreprises.
-            </p>
-
-          </div>
-
-        </article>
 
       </div>
 
-    </div>
+    </section>
 
 
 
 
 
-    <!-- ==================================================
-         UNICEF
-    ================================================== -->
+    <!-- ======================================================
+         EXPERIENCE
+    ====================================================== -->
 
-    <div class="portfolio-group reveal">
+    <section
+      class="section experience-section"
+      id="experience"
+    >
 
-      <div class="portfolio-group-heading">
+      <div class="container">
 
-        <div>
 
-          <span class="company-index">
+        <div class="section-marker light reveal">
+
+          <span>
             02
           </span>
 
-          <p class="project-company">
-            UNICEF Burundi
-          </p>
+          <span>
+            Expérience
+          </span>
 
-          <h3>
-            Rédaction, photographie & communication de terrain
-          </h3>
+          <span class="marker-line"></span>
 
         </div>
 
-        <p>
 
-          Production de contenus web et social media,
-          couverture d’activités de terrain
-          et valorisation de programmes
-          en faveur des enfants et des communautés.
 
-        </p>
+        <div class="section-intro light reveal">
+
+          <p class="eyebrow">
+            Parcours
+          </p>
+
+          <h2>
+
+            Des contextes différents.<br>
+
+            Une même exigence de clarté.
+
+          </h2>
+
+        </div>
+
+
+
+
+        <div class="experience-list">
+
+
+          <!-- FLP -->
+
+          <article class="experience-row reveal">
+
+            <div class="exp-year">
+              2025 — aujourd’hui
+            </div>
+
+            <div class="exp-main">
+
+              <h3>
+                Fondation Lucien Paye · CIUP
+              </h3>
+
+              <p>
+                Responsable de la newsletter
+              </p>
+
+            </div>
+
+            <div class="exp-detail">
+
+              Newsletter · coordination éditoriale ·
+              visuels événementiels · suivi des résultats
+
+            </div>
+
+          </article>
+
+
+
+
+          <!-- BL EVOLUTION -->
+
+          <article class="experience-row reveal">
+
+            <div class="exp-year">
+              Fév. — Juil. 2026
+            </div>
+
+            <div class="exp-main">
+
+              <h3>
+                BL évolution
+              </h3>
+
+              <p>
+                Communication & Graphisme
+              </p>
+
+            </div>
+
+            <div class="exp-detail">
+
+              Editorial · infographies · LinkedIn ·
+              webinaires · événementiel · supports commerciaux
+
+            </div>
+
+          </article>
+
+
+
+
+          <!-- UNICEF -->
+
+          <article class="experience-row reveal">
+
+            <div class="exp-year">
+              Juin — Août 2025
+            </div>
+
+            <div class="exp-main">
+
+              <h3>
+                UNICEF Burundi
+              </h3>
+
+              <p>
+                Communication
+              </p>
+
+            </div>
+
+            <div class="exp-detail">
+
+              Rédaction web · photographie de terrain ·
+              social media · campagnes de sensibilisation
+
+            </div>
+
+          </article>
+
+
+
+
+          <!-- WARESA -->
+
+          <article class="experience-row reveal">
+
+            <div class="exp-year">
+              Fév. 2024 — Juin 2025
+            </div>
+
+            <div class="exp-main">
+
+              <h3>
+                WARESA
+              </h3>
+
+              <p>
+                Communication & Design
+              </p>
+
+            </div>
+
+            <div class="exp-detail">
+
+              Identité visuelle · affiches ·
+              campagnes événementielles · contenus social media
+
+            </div>
+
+          </article>
+
+
+
+
+          <!-- BUJAHUB -->
+
+          <article class="experience-row reveal">
+
+            <div class="exp-year">
+              Sept. — Oct. 2023
+            </div>
+
+            <div class="exp-main">
+
+              <h3>
+                BUJAHUB
+              </h3>
+
+              <p>
+                Communication
+              </p>
+
+            </div>
+
+            <div class="exp-detail">
+
+              Community management · création de contenus ·
+              photographie · communication entrepreneuriale
+
+            </div>
+
+          </article>
+
+        </div>
 
       </div>
 
-
-
-
-      <div class="unicef-grid">
-
-
-        <article class="story-card story-card-large">
-
-          <img
-            src="assets/projects/unicef/creatable-buhonga/creatable-buhonga-cover.jpg"
-            alt="Projet CREATABLE à Buhonga"
-            loading="lazy"
-          >
-
-          <div class="story-card-content">
-
-            <span>
-              Reportage · Éducation
-            </span>
-
-            <h4>
-              CREATABLE à Buhonga
-            </h4>
-
-            <p>
-              Photographie et storytelling
-              autour d’un programme favorisant
-              l’innovation et l’apprentissage
-              par la pratique.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-
-        <article class="story-card">
-
-          <img
-            src="assets/projects/unicef/digitalisation-sante/digitalisation-sante-cover.jpg"
-            alt="Digitalisation du système de santé au Burundi"
-            loading="lazy"
-          >
-
-          <div class="story-card-content">
-
-            <span>
-              Numérique · Santé
-            </span>
-
-            <h4>
-              Digitalisation de la santé
-            </h4>
-
-            <p>
-              Contenu institutionnel
-              autour de l’intégration
-              d’outils numériques
-              dans le système de santé.
-            </p>
-
-          </div>
-
-        </article>
-
-
-
-
-        <article class="story-card">
-
-          <img
-            src="assets/projects/unicef/infrastructures-scolaires/infrastructures-scolaires-cover.jpg"
-            alt="Infrastructures scolaires au Burundi"
-            loading="lazy"
-          >
-
-          <div class="story-card-content">
-
-            <span>
-              Terrain · Éducation
-            </span>
-
-            <h4>
-              Infrastructures scolaires
-            </h4>
-
-            <p>
-              Reportage destiné
-              à valoriser l’amélioration
-              des conditions d’apprentissage
-              des élèves.
-            </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
-
-      <p class="photo-credit">
-        Photographies sélectionnées parmi mes productions réalisées
-        dans le cadre de mon stage à UNICEF Burundi.
-      </p>
-
-    </div>
+    </section>
 
 
 
 
 
-    <!-- ==================================================
-         WARESA
-    ================================================== -->
+    <!-- ======================================================
+         PROJETS
+    ====================================================== -->
 
-    <div class="portfolio-group reveal">
+    <section
+      class="section work-section"
+      id="projets"
+    >
 
-      <div class="portfolio-group-heading">
+      <div class="container">
 
-        <div>
 
-          <span class="company-index">
+        <div class="section-marker reveal">
+
+          <span>
             03
           </span>
 
-          <p class="project-company">
-            WARESA
-          </p>
+          <span>
+            Selected work
+          </span>
 
-          <h3>
-            Design graphique & communication événementielle
-          </h3>
+          <span class="marker-line"></span>
 
         </div>
 
-        <p>
 
-          Création de supports
-          pour conférences, awards,
-          campagnes internationales
-          et communication social media.
 
-        </p>
+
+        <div class="work-heading reveal">
+
+
+          <div>
+
+            <p class="eyebrow">
+              Portfolio
+            </p>
+
+            <h2>
+
+              Le travail<br>
+              avant le discours.
+
+            </h2>
+
+          </div>
+
+
+
+          <p>
+
+            Une sélection de projets montrant plusieurs
+            facettes de mon travail : vulgarisation,
+            design éditorial, photographie,
+            communication institutionnelle et événementielle.
+
+          </p>
+
+        </div>
+
+
+
+
+        <nav
+          class="work-index reveal"
+          aria-label="Accès rapide aux projets"
+        >
+
+          <a href="#bl-evolution">
+            <span>01</span>
+            BL évolution
+          </a>
+
+          <a href="#unicef">
+            <span>02</span>
+            UNICEF
+          </a>
+
+          <a href="#waresa">
+            <span>03</span>
+            WARESA
+          </a>
+
+          <a href="#bujahub">
+            <span>04</span>
+            BUJAHUB
+          </a>
+
+          <a href="#flp">
+            <span>05</span>
+            Fondation Lucien Paye
+          </a>
+
+        </nav>
+
+
+
+
+
+        <!-- ==================================================
+             01 — BL EVOLUTION
+        ================================================== -->
+
+        <section
+          class="project-chapter"
+          id="bl-evolution"
+        >
+
+
+          <div class="chapter-heading reveal">
+
+
+            <div>
+
+              <span class="chapter-no">
+                01 / 05
+              </span>
+
+              <p>
+                BL évolution · Paris · 2026
+              </p>
+
+            </div>
+
+
+            <h3>
+
+              Communication éditoriale<br>
+              & création visuelle
+
+            </h3>
+
+          </div>
+
+
+
+
+          <!-- SBTI -->
+
+          <article class="feature-project reveal">
+
+
+            <div class="feature-copy">
+
+
+              <div class="feature-meta">
+
+                <span>
+                  Projet phare
+                </span>
+
+                <span>
+                  SBTi Net-Zero V2.0
+                </span>
+
+              </div>
+
+
+
+              <h4>
+
+                Rendre un sujet technique<br>
+
+                <em>
+                  immédiatement lisible.
+                </em>
+
+              </h4>
+
+
+
+              <p>
+
+                Création d’un carrousel et d’infographies
+                pour structurer et vulgariser les évolutions
+                du standard Net-Zero dans un format
+                adapté à la lecture digitale.
+
+              </p>
+
+
+
+              <div class="chips">
+
+                <span>Infographie</span>
+                <span>Design éditorial</span>
+                <span>LinkedIn</span>
+                <span>Vulgarisation</span>
+
+              </div>
+
+            </div>
+
+
+
+
+            <button
+              class="media-frame media-frame-hero lightbox-trigger"
+              type="button"
+              data-full="assets/projects/bl-evolution/sbti/sbti-carousel-01.png"
+              aria-label="Agrandir le projet SBTi"
+            >
+
+              <img
+                src="assets/projects/bl-evolution/sbti/sbti-carousel-01.png"
+                alt="Carrousel SBTi Net-Zero V2.0"
+                loading="lazy"
+                decoding="async"
+              >
+
+              <span class="zoom-cue">
+                Agrandir ↗
+              </span>
+
+            </button>
+
+          </article>
+
+
+
+
+          <!-- INFOGRAPHIES SBTI -->
+
+          <div class="editorial-pair reveal">
+
+
+            <button
+              class="media-frame lightbox-trigger"
+              type="button"
+              data-full="assets/projects/bl-evolution/sbti/sbti-infographie-01.png"
+              aria-label="Agrandir l'infographie SBTi 1"
+            >
+
+              <img
+                src="assets/projects/bl-evolution/sbti/sbti-infographie-01.png"
+                alt="Infographie SBTi Net-Zero V2.0"
+                loading="lazy"
+                decoding="async"
+              >
+
+              <span class="zoom-cue">
+                01 ↗
+              </span>
+
+            </button>
+
+
+
+            <button
+              class="media-frame lightbox-trigger"
+              type="button"
+              data-full="assets/projects/bl-evolution/sbti/sbti-infographie-02.png"
+              aria-label="Agrandir l'infographie SBTi 2"
+            >
+
+              <img
+                src="assets/projects/bl-evolution/sbti/sbti-infographie-02.png"
+                alt="Infographie sur les scopes 1, 2 et 3"
+                loading="lazy"
+                decoding="async"
+              >
+
+              <span class="zoom-cue">
+                02 ↗
+              </span>
+
+            </button>
+
+          </div>
+
+
+
+
+          <!-- AUTRES PROJETS BL -->
+
+          <div class="project-card-grid reveal">
+
+
+            <!-- VSME -->
+
+            <article class="art-card art-card-tall">
+
+              <button
+                class="art-image lightbox-trigger"
+                type="button"
+                data-full="assets/projects/bl-evolution/vsme/vsme-cover.png"
+                aria-label="Agrandir le projet VSME"
+              >
+
+                <img
+                  src="assets/projects/bl-evolution/vsme/vsme-cover.png"
+                  alt="Campagne VSME"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+              </button>
+
+
+              <div class="art-copy">
+
+                <span>
+                  01
+                </span>
+
+                <h4>
+                  VSME
+                </h4>
+
+                <p>
+                  Campagne éditoriale & contenus pédagogiques.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+
+            <!-- SOCIETE A MISSION -->
+
+            <article class="art-card">
+
+              <button
+                class="art-image lightbox-trigger"
+                type="button"
+                data-full="assets/projects/bl-evolution/societe-a-mission/societe-a-mission-cover.png"
+                aria-label="Agrandir Société à mission"
+              >
+
+                <img
+                  src="assets/projects/bl-evolution/societe-a-mission/societe-a-mission-cover.png"
+                  alt="Carrousel Société à mission"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+              </button>
+
+
+              <div class="art-copy">
+
+                <span>
+                  02
+                </span>
+
+                <h4>
+                  Société à mission
+                </h4>
+
+                <p>
+                  Carrousel social media.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+
+            <!-- PRODURABLE -->
+
+            <article class="art-card">
+
+              <button
+                class="art-image lightbox-trigger"
+                type="button"
+                data-full="assets/projects/bl-evolution/produrable/produrable-cover.png"
+                aria-label="Agrandir Produrable"
+              >
+
+                <img
+                  src="assets/projects/bl-evolution/produrable/produrable-cover.png"
+                  alt="Communication Produrable"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+              </button>
+
+
+              <div class="art-copy">
+
+                <span>
+                  03
+                </span>
+
+                <h4>
+                  PRODURABLE
+                </h4>
+
+                <p>
+                  Communication événementielle.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+
+            <!-- WEBINAIRES -->
+
+            <article class="art-card art-card-wide">
+
+              <button
+                class="art-image lightbox-trigger"
+                type="button"
+                data-full="assets/projects/bl-evolution/webinaires-sbf120/webinaires-cover.png"
+                aria-label="Agrandir les webinaires SBF120"
+              >
+
+                <img
+                  src="assets/projects/bl-evolution/webinaires-sbf120/webinaires-cover.png"
+                  alt="Cycle de webinaires SBF120"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+              </button>
+
+
+              <div class="art-copy">
+
+                <span>
+                  04
+                </span>
+
+                <h4>
+                  Cycle SBF120
+                </h4>
+
+                <p>
+                  Identité et déclinaisons pour webinaires.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+
+            <!-- ADAPTATION -->
+
+            <article class="art-card art-card-wide">
+
+              <button
+                class="art-image lightbox-trigger"
+                type="button"
+                data-full="assets/projects/bl-evolution/adaptation-climatique/adaptation-infographie-01.png"
+                aria-label="Agrandir l'infographie adaptation climatique"
+              >
+
+                <img
+                  src="assets/projects/bl-evolution/adaptation-climatique/adaptation-infographie-01.png"
+                  alt="Infographie adaptation climatique"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+              </button>
+
+
+              <div class="art-copy">
+
+                <span>
+                  05
+                </span>
+
+                <h4>
+                  Adaptation climatique
+                </h4>
+
+                <p>
+                  Infographie & hiérarchie de l’information.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+
+
+
+        <!-- ==================================================
+             02 — UNICEF
+        ================================================== -->
+
+        <section
+          class="project-chapter photo-chapter"
+          id="unicef"
+        >
+
+
+          <div class="chapter-heading reveal">
+
+
+            <div>
+
+              <span class="chapter-no">
+                02 / 05
+              </span>
+
+              <p>
+                UNICEF Burundi · 2025
+              </p>
+
+            </div>
+
+
+            <h3>
+
+              Rédaction, photographie<br>
+              & storytelling de terrain
+
+            </h3>
+
+          </div>
+
+
+
+
+          <!-- CREATABLE -->
+
+          <article class="photo-feature reveal">
+
+
+            <button
+              class="photo-feature-media lightbox-trigger"
+              type="button"
+              data-full="assets/projects/unicef/creatable-buhonga/creatable-buhonga-cover.jpg"
+              aria-label="Agrandir la photo CREATABLE"
+            >
+
+              <img
+                src="assets/projects/unicef/creatable-buhonga/creatable-buhonga-cover.jpg"
+                alt="Projet CREATABLE à Buhonga"
+                loading="lazy"
+                decoding="async"
+              >
+
+              <span class="zoom-cue">
+                Voir la photo ↗
+              </span>
+
+            </button>
+
+
+
+
+            <div class="photo-feature-copy">
+
+              <span>
+                Reportage · Éducation
+              </span>
+
+              <h4>
+
+                CREATABLE<br>
+                à Buhonga
+
+              </h4>
+
+              <p>
+
+                Photographie et storytelling autour
+                d’un programme favorisant l’innovation,
+                l’apprentissage pratique
+                et l’autonomie des jeunes.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+
+          <div class="photo-stories reveal">
+
+
+            <!-- DIGITALISATION SANTE -->
+
+            <article>
+
+
+              <button
+                class="story-image lightbox-trigger"
+                type="button"
+                data-full="assets/projects/unicef/digitalisation-sante/digitalisation-sante-cover.jpg"
+                aria-label="Agrandir la photo digitalisation santé"
+              >
+
+                <img
+                  src="assets/projects/unicef/digitalisation-sante/digitalisation-sante-cover.jpg"
+                  alt="Digitalisation du système de santé"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+              </button>
+
+
+              <div>
+
+                <span>
+                  Numérique · Santé
+                </span>
+
+                <h4>
+                  Digitalisation de la santé
+                </h4>
+
+                <p>
+
+                  Communication institutionnelle
+                  et couverture photographique.
+
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+
+            <!-- INFRASTRUCTURES -->
+
+            <article>
+
+
+              <button
+                class="story-image lightbox-trigger"
+                type="button"
+                data-full="assets/projects/unicef/infrastructures-scolaires/infrastructures-scolaires-cover.jpg"
+                aria-label="Agrandir la photo infrastructures scolaires"
+              >
+
+                <img
+                  src="assets/projects/unicef/infrastructures-scolaires/infrastructures-scolaires-cover.jpg"
+                  alt="Infrastructures scolaires au Burundi"
+                  loading="lazy"
+                  decoding="async"
+                >
+
+              </button>
+
+
+              <div>
+
+                <span>
+                  Terrain · Éducation
+                </span>
+
+                <h4>
+                  Infrastructures scolaires
+                </h4>
+
+                <p>
+
+                  Reportage et valorisation
+                  de projets au service des élèves.
+
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+
+          <p class="credit reveal">
+
+            Photographies réalisées dans le cadre
+            de mon stage à UNICEF Burundi.
+
+          </p>
+
+        </section>
+
+
+
+
+
+        <!-- ==================================================
+             03 — WARESA
+        ================================================== -->
+
+        <section
+          class="project-chapter poster-chapter"
+          id="waresa"
+        >
+
+
+          <div class="chapter-heading reveal">
+
+
+            <div>
+
+              <span class="chapter-no">
+                03 / 05
+              </span>
+
+              <p>
+                WARESA · 2024—2025
+              </p>
+
+            </div>
+
+
+            <h3>
+
+              Design graphique<br>
+              & campagnes événementielles
+
+            </h3>
+
+          </div>
+
+
+
+
+          <div class="poster-wall reveal">
+
+
+            <button
+              class="poster poster-a lightbox-trigger"
+              type="button"
+              data-full="assets/projects/waresa/waresa-asia-awards-cover.png"
+              aria-label="Agrandir WARESA Asia Awards"
+            >
+
+              <img
+                src="assets/projects/waresa/waresa-asia-awards-cover.png"
+                alt="WARESA Asia Awards"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="poster poster-b lightbox-trigger"
+              type="button"
+              data-full="assets/projects/waresa/waresa-europe-awards-call.png"
+              aria-label="Agrandir WARESA Europe Awards"
+            >
+
+              <img
+                src="assets/projects/waresa/waresa-europe-awards-call.png"
+                alt="WARESA Europe Awards"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="poster poster-c lightbox-trigger"
+              type="button"
+              data-full="assets/projects/waresa/waresa-mirec-travel-grant.png"
+              aria-label="Agrandir MIREC Travel Grant"
+            >
+
+              <img
+                src="assets/projects/waresa/waresa-mirec-travel-grant.png"
+                alt="MIREC Travel Grant"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="poster poster-d lightbox-trigger"
+              type="button"
+              data-full="assets/projects/waresa/waresa-asia-awards-embassy.png"
+              aria-label="Agrandir WARESA Asia Awards Embassy"
+            >
+
+              <img
+                src="assets/projects/waresa/waresa-asia-awards-embassy.png"
+                alt="Communication institutionnelle WARESA"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="poster poster-e lightbox-trigger"
+              type="button"
+              data-full="assets/projects/waresa/waresa-award-winner.png"
+              aria-label="Agrandir WARESA Award Winner"
+            >
+
+              <img
+                src="assets/projects/waresa/waresa-award-winner.png"
+                alt="Visuel WARESA Award Winner"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <div class="poster-note">
+
+              <span>
+                Social media · Posters · Awards
+              </span>
+
+              <p>
+
+                Décliner une identité sur plusieurs événements,
+                formats et messages sans perdre
+                la cohérence visuelle.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+
+
+        <!-- ==================================================
+             04 — BUJAHUB
+        ================================================== -->
+
+        <section
+          class="project-chapter"
+          id="bujahub"
+        >
+
+
+          <div class="chapter-heading reveal">
+
+
+            <div>
+
+              <span class="chapter-no">
+                04 / 05
+              </span>
+
+              <p>
+                BUJAHUB · Bujumbura · 2023
+              </p>
+
+            </div>
+
+
+            <h3>
+
+              Communication digitale<br>
+              & photographie d’ateliers
+
+            </h3>
+
+          </div>
+
+
+
+
+          <div class="reportage-grid reveal">
+
+
+            <button
+              class="reportage-main lightbox-trigger"
+              type="button"
+              data-full="assets/projects/bujahub/bujahub-cover.jpg"
+              aria-label="Agrandir la photo BUJAHUB principale"
+            >
+
+              <img
+                src="assets/projects/bujahub/bujahub-cover.jpg"
+                alt="Atelier BUJAHUB"
+                loading="lazy"
+                decoding="async"
+              >
+
+              <span class="zoom-cue">
+                Reportage ↗
+              </span>
+
+            </button>
+
+
+
+
+            <button
+              class="reportage-small lightbox-trigger"
+              type="button"
+              data-full="assets/projects/bujahub/bujahub-workshop-01.jpg"
+              aria-label="Agrandir la photo atelier BUJAHUB 1"
+            >
+
+              <img
+                src="assets/projects/bujahub/bujahub-workshop-01.jpg"
+                alt="Atelier collaboratif BUJAHUB"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="reportage-small lightbox-trigger"
+              type="button"
+              data-full="assets/projects/bujahub/bujahub-workshop-02.jpg"
+              aria-label="Agrandir la photo atelier BUJAHUB 2"
+            >
+
+              <img
+                src="assets/projects/bujahub/bujahub-workshop-02.jpg"
+                alt="Participants à un atelier BUJAHUB"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="reportage-small lightbox-trigger"
+              type="button"
+              data-full="assets/projects/bujahub/bujahub-workshop-03.jpg"
+              aria-label="Agrandir la photo atelier BUJAHUB 3"
+            >
+
+              <img
+                src="assets/projects/bujahub/bujahub-workshop-03.jpg"
+                alt="Formation à BUJAHUB"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="reportage-social lightbox-trigger"
+              type="button"
+              data-full="assets/projects/bujahub/bujahub-mondayboost.jpg"
+              aria-label="Agrandir le visuel MondayBoost"
+            >
+
+              <img
+                src="assets/projects/bujahub/bujahub-mondayboost.jpg"
+                alt="Visuel MondayBoost BUJAHUB"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+          </div>
+
+        </section>
+
+
+
+
+
+        <!-- ==================================================
+             05 — FONDATION LUCIEN PAYE
+        ================================================== -->
+
+        <section
+          class="project-chapter"
+          id="flp"
+        >
+
+
+          <div class="chapter-heading reveal">
+
+
+            <div>
+
+              <span class="chapter-no">
+                05 / 05
+              </span>
+
+              <p>
+                Fondation Lucien Paye · CIUP
+              </p>
+
+            </div>
+
+
+            <h3>
+
+              Newsletter<br>
+              & communication communautaire
+
+            </h3>
+
+          </div>
+
+
+
+
+          <div class="flp-stage reveal">
+
+
+            <button
+              class="flp-piece flp-piece-1 lightbox-trigger"
+              type="button"
+              data-full="assets/projects/fondation-lucien-paye/flp-newsletter-ia-cover.png"
+              aria-label="Agrandir la newsletter intelligence artificielle"
+            >
+
+              <img
+                src="assets/projects/fondation-lucien-paye/flp-newsletter-ia-cover.png"
+                alt="Newsletter De la bêtise artificielle"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="flp-piece flp-piece-2 lightbox-trigger"
+              type="button"
+              data-full="assets/projects/fondation-lucien-paye/flp-aworiland.png"
+              aria-label="Agrandir Aworiland"
+            >
+
+              <img
+                src="assets/projects/fondation-lucien-paye/flp-aworiland.png"
+                alt="Visuel Aworiland"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="flp-piece flp-piece-3 lightbox-trigger"
+              type="button"
+              data-full="assets/projects/fondation-lucien-paye/flp-festival-cuisine.png"
+              aria-label="Agrandir Festival de cuisine"
+            >
+
+              <img
+                src="assets/projects/fondation-lucien-paye/flp-festival-cuisine.png"
+                alt="Festival annuel de cuisine"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="flp-piece flp-piece-4 lightbox-trigger"
+              type="button"
+              data-full="assets/projects/fondation-lucien-paye/flp-fete-orishas.png"
+              aria-label="Agrandir Fête des Orishas"
+            >
+
+              <img
+                src="assets/projects/fondation-lucien-paye/flp-fete-orishas.png"
+                alt="Fête des Orishas"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <button
+              class="flp-piece flp-piece-5 lightbox-trigger"
+              type="button"
+              data-full="assets/projects/fondation-lucien-paye/flp-atelier-creativite.png"
+              aria-label="Agrandir Atelier créativité"
+            >
+
+              <img
+                src="assets/projects/fondation-lucien-paye/flp-atelier-creativite.png"
+                alt="Atelier créativité"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </button>
+
+
+
+
+            <div class="flp-stage-copy">
+
+              <span>
+                Newsletter · Affiches · Événementiel
+              </span>
+
+              <h4>
+
+                Informer sans<br>
+                ennuyer.
+
+              </h4>
+
+              <p>
+
+                Structurer l’information,
+                créer un univers graphique
+                et donner envie aux résident·es
+                de participer à la vie culturelle de la maison.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
 
       </div>
 
-
-
-
-      <div class="visual-gallery waresa-gallery">
-
-        <figure class="gallery-featured">
-
-          <img
-            src="assets/projects/waresa/waresa-asia-awards-cover.png"
-            alt="WARESA Asia Awards"
-            loading="lazy"
-          >
-
-          <figcaption>
-            WARESA Asia Awards
-          </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-          <img
-            src="assets/projects/waresa/waresa-europe-awards-call.png"
-            alt="WARESA Europe Awards"
-            loading="lazy"
-          >
-
-          <figcaption>
-            Europe Awards
-          </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-          <img
-            src="assets/projects/waresa/waresa-mirec-travel-grant.png"
-            alt="MIREC Travel Grant"
-            loading="lazy"
-          >
-
-          <figcaption>
-            MIREC Travel Grant
-          </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-          <img
-            src="assets/projects/waresa/waresa-asia-awards-embassy.png"
-            alt="Communication WARESA Asia Awards"
-            loading="lazy"
-          >
-
-          <figcaption>
-            Communication institutionnelle
-          </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-          <img
-            src="assets/projects/waresa/waresa-award-winner.png"
-            alt="Visuel WARESA Award Winner"
-            loading="lazy"
-          >
-
-          <figcaption>
-            Valorisation des lauréats
-          </figcaption>
-
-        </figure>
-
-      </div>
-
-    </div>
+    </section>
 
 
 
 
 
-    <!-- ==================================================
-         BUJAHUB
-    ================================================== -->
+    <!-- ======================================================
+         RECHERCHE
+    ====================================================== -->
 
-    <div class="portfolio-group reveal">
+    <section
+      class="section research-section"
+      id="recherche"
+    >
 
-      <div class="portfolio-group-heading">
+      <div class="container">
 
-        <div>
 
-          <span class="company-index">
+        <div class="section-marker light reveal">
+
+          <span>
             04
           </span>
 
-          <p class="project-company">
-            BUJAHUB · Bujumbura
-          </p>
+          <span>
+            Recherche
+          </span>
 
-          <h3>
-            Communication digitale & photographie
-          </h3>
+          <span class="marker-line"></span>
 
         </div>
 
-        <p>
-
-          Création de contenus,
-          couverture d’ateliers,
-          photographie et animation
-          des plateformes digitales du hub.
-
-        </p>
-
-      </div>
 
 
 
-
-      <div class="bujahub-layout">
-
-        <figure class="bujahub-main">
-
-          <img
-            src="assets/projects/bujahub/bujahub-cover.jpg"
-            alt="Atelier à BUJAHUB"
-            loading="lazy"
-          >
-
-          <figcaption>
-            Couverture photographique d’un atelier
-          </figcaption>
-
-        </figure>
+        <div class="research-layout">
 
 
-        <div class="bujahub-gallery">
+          <div class="research-copy reveal">
 
-          <img
-            src="assets/projects/bujahub/bujahub-workshop-01.jpg"
-            alt="Atelier collaboratif à BUJAHUB"
-            loading="lazy"
-          >
+            <p class="eyebrow">
+              Mémoire · 2026
+            </p>
 
-          <img
-            src="assets/projects/bujahub/bujahub-workshop-02.jpg"
-            alt="Participants à un atelier BUJAHUB"
-            loading="lazy"
-          >
+            <h2>
 
-          <img
-            src="assets/projects/bujahub/bujahub-workshop-03.jpg"
-            alt="Formation à BUJAHUB"
-            loading="lazy"
-          >
+              Comprendre les usages,<br>
+              pas seulement produire.
 
-          <img
-            src="assets/projects/bujahub/bujahub-mondayboost.jpg"
-            alt="Publication Monday Boost de BUJAHUB"
-            loading="lazy"
-          >
+            </h2>
+
+            <p>
+
+              Influence des réseaux sociaux
+              sur la participation citoyenne
+              des jeunes au Burundi
+              en période électorale.
+
+            </p>
+
+          </div>
+
+
+
+
+          <div class="research-card reveal">
+
+
+            <div class="research-stat">
+
+              <strong>
+                103
+              </strong>
+
+              <span>
+                réponses au questionnaire
+              </span>
+
+            </div>
+
+
+
+            <div class="research-stat">
+
+              <strong>
+                30
+              </strong>
+
+              <span>
+                entretiens
+              </span>
+
+            </div>
+
+
+
+            <div class="research-stat">
+
+              <strong>
+                15
+              </strong>
+
+              <span>
+                contenus analysés
+              </span>
+
+            </div>
+
+
+
+
+            <div class="research-methods">
+
+              <span>
+                Questionnaire
+              </span>
+
+              <span>
+                Entretiens
+              </span>
+
+              <span>
+                Analyse de corpus
+              </span>
+
+              <span>
+                Usages numériques
+              </span>
+
+            </div>
+
+          </div>
 
         </div>
 
       </div>
 
-    </div>
+    </section>
 
 
 
 
 
-    <!-- ==================================================
-         FONDATION LUCIEN PAYE
-    ================================================== -->
+    <!-- ======================================================
+         COMPETENCES
+    ====================================================== -->
 
-    <div class="portfolio-group reveal">
+    <section class="section skills-section">
 
-      <div class="portfolio-group-heading">
+      <div class="container">
 
-        <div>
 
-          <span class="company-index">
+        <div class="section-marker reveal">
+
+          <span>
             05
           </span>
 
-          <p class="project-company">
-            Fondation Lucien Paye · CIUP
+          <span>
+            Compétences
+          </span>
+
+          <span class="marker-line"></span>
+
+        </div>
+
+
+
+
+        <div class="skills-layout">
+
+
+          <div class="skills-title reveal">
+
+            <p class="eyebrow">
+              Toolkit
+            </p>
+
+            <h2>
+
+              Stratégie.<br>
+              Création.<br>
+              Exécution.
+
+            </h2>
+
+          </div>
+
+
+
+
+          <div class="skills-cloud reveal">
+
+            <span>
+              Communication digitale
+            </span>
+
+            <span>
+              Stratégie éditoriale
+            </span>
+
+            <span>
+              Rédaction web
+            </span>
+
+            <span>
+              Community management
+            </span>
+
+            <span>
+              Adobe Creative Cloud
+            </span>
+
+            <span>
+              Canva
+            </span>
+
+            <span>
+              WordPress
+            </span>
+
+            <span>
+              Brevo
+            </span>
+
+            <span>
+              Photographie
+            </span>
+
+            <span>
+              Montage vidéo
+            </span>
+
+            <span>
+              Social analytics
+            </span>
+
+            <span>
+              Excel & reporting
+            </span>
+
+            <span>
+              IA générative
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+
+        <!-- CERTIFICATIONS -->
+
+        <div class="cert-row reveal">
+
+
+          <div>
+
+            <span>
+              2025
+            </span>
+
+            <strong>
+              Sécurité de l’information
+            </strong>
+
+            <small>
+              UNICEF
+            </small>
+
+          </div>
+
+
+
+          <div>
+
+            <span>
+              2025
+            </span>
+
+            <strong>
+              Développement Web
+            </strong>
+
+            <small>
+              D-Clic · OIF
+            </small>
+
+          </div>
+
+
+
+          <div>
+
+            <span>
+              2022
+            </span>
+
+            <strong>
+              Advanced English Course
+            </strong>
+
+            <small>
+              World English Institute
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+    <!-- ======================================================
+         CONTACT
+    ====================================================== -->
+
+    <section
+      class="contact-section"
+      id="contact"
+    >
+
+      <div class="container contact-layout">
+
+
+        <div class="contact-copy reveal">
+
+          <p class="eyebrow">
+
+            Disponible dès janvier 2027
+
           </p>
 
-          <h3>
-            Newsletter & communication communautaire
-          </h3>
+          <h2>
+
+            Une idée<br>
+            à faire vivre ?
+
+          </h2>
+
+          <p>
+
+            Stage de 6 mois · communication digitale ·
+            création visuelle · médias numériques.
+
+          </p>
 
         </div>
 
-        <p>
 
-          Création de visuels,
-          structuration éditoriale
-          et promotion d’événements
-          culturels et communautaires.
 
-        </p>
+
+        <div class="contact-links reveal">
+
+
+          <a href="mailto:guyoliviernibimpa@gmail.com">
+
+            <span>
+              Email
+            </span>
+
+            <strong>
+              guyoliviernibimpa@gmail.com
+            </strong>
+
+            <i>
+              ↗
+            </i>
+
+          </a>
+
+
+
+
+          <a href="tel:+33776466245">
+
+            <span>
+              Téléphone
+            </span>
+
+            <strong>
+              +33 7 76 46 62 45
+            </strong>
+
+            <i>
+              ↗
+            </i>
+
+          </a>
+
+
+
+
+          <a
+            href="https://www.linkedin.com/in/guy-olivier-nibimpa-39649b254/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span>
+              LinkedIn
+            </span>
+
+            <strong>
+              Voir mon profil
+            </strong>
+
+            <i>
+              ↗
+            </i>
+
+          </a>
+
+
+
+
+          <a
+            href="assets/cv/cv-guy-olivier-nibimpa.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span>
+              CV
+            </span>
+
+            <strong>
+              Télécharger le PDF
+            </strong>
+
+            <i>
+              ↓
+            </i>
+
+          </a>
+
+        </div>
 
       </div>
 
 
 
 
-      <div class="visual-gallery flp-gallery">
+      <!-- FOOTER -->
 
-        <figure class="gallery-featured">
-
-          <img
-            src="assets/projects/fondation-lucien-paye/flp-newsletter-ia-cover.png"
-            alt="Newsletter sur la conférence De la bêtise artificielle"
-            loading="lazy"
-          >
-
-          <figcaption>
-            Newsletter · Intelligence artificielle
-          </figcaption>
-
-        </figure>
+      <div class="container footer-line">
 
 
-        <figure>
+        <div class="footer-signature">
 
-          <img
-            src="assets/projects/fondation-lucien-paye/flp-aworiland.png"
-            alt="Communication autour d’Aworiland"
-            loading="lazy"
-          >
-
-          <figcaption>
-            Aworiland
-          </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-          <img
-            src="assets/projects/fondation-lucien-paye/flp-festival-cuisine.png"
-            alt="Festival annuel de cuisine"
-            loading="lazy"
-          >
-
-          <figcaption>
-            Festival de cuisine
-          </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-          <img
-            src="assets/projects/fondation-lucien-paye/flp-fete-orishas.png"
-            alt="Communication autour de la Fête des Orishas"
-            loading="lazy"
-          >
-
-          <figcaption>
-            Fête des Orishas
-          </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-          <img
-            src="assets/projects/fondation-lucien-paye/flp-atelier-creativite.png"
-            alt="Atelier créativité à la Fondation Lucien Paye"
-            loading="lazy"
-          >
-
-          <figcaption>
-            Atelier créativité
-          </figcaption>
-
-        </figure>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-
-<!-- ======================================================
-     RECHERCHE
-====================================================== -->
-
-<section
-  class="section research-section"
-  id="recherche"
->
-
-  <div class="container research-grid">
-
-
-    <div class="research-title reveal">
-
-      <span class="section-number">
-        05
-      </span>
-
-      <p class="section-label">
-        Recherche
-      </p>
-
-      <h2>
-
-        Comprendre les usages,
-        pas seulement produire du contenu.
-
-      </h2>
-
-    </div>
-
-
-
-
-    <article class="research-card reveal">
-
-      <small>
-        Mémoire de recherche · 2026
-      </small>
-
-      <h3>
-
-        Influence des réseaux sociaux
-        sur la participation citoyenne
-        des jeunes au Burundi
-        en période électorale
-
-      </h3>
-
-      <p>
-
-        Une recherche consacrée
-        aux usages numériques,
-        à la circulation de l’information
-        et aux formes de participation
-        citoyenne des jeunes.
-
-      </p>
-
-      <div class="research-methods">
-
-        <div>
-
-          <strong>
-            103
-          </strong>
+          <span class="brand-mark brand-mark-light">
+            GO
+          </span>
 
           <span>
-            réponses au questionnaire
+            Guy-Olivier Nibimpa
           </span>
 
         </div>
 
 
-        <div>
-
-          <strong>
-            30
-          </strong>
-
-          <span>
-            entretiens
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <strong>
-            15
-          </strong>
-
-          <span>
-            contenus du corpus social media
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <div class="research-tags">
-
         <span>
-          Questionnaire
+
+          © <span id="year"></span>
+
         </span>
 
-        <span>
-          Entretiens
-        </span>
 
-        <span>
-          Analyse de corpus
-        </span>
+        <a href="#accueil">
 
-        <span>
-          Médias numériques
-        </span>
+          Retour en haut ↑
+
+        </a>
 
       </div>
 
-    </article>
+    </section>
 
-  </div>
+  </main>
 
-</section>
 
 
 
 
+  <!-- ======================================================
+       LIGHTBOX
+  ====================================================== -->
 
-<!-- ======================================================
-     OUTILS
-====================================================== -->
+  <dialog
+    class="lightbox"
+    id="lightbox"
+    aria-label="Aperçu du projet"
+  >
 
-<section class="section tools-section">
 
-  <div class="container">
+    <button
+      class="lightbox-close"
+      type="button"
+      aria-label="Fermer l’aperçu"
+    >
 
-    <div class="section-heading reveal">
+      ×
 
-      <span class="section-number">
-        06
-      </span>
+    </button>
 
-      <div>
 
-        <p class="section-label">
-          Compétences & outils
-        </p>
+    <div class="lightbox-stage">
 
-        <h2>
-          Mon environnement de travail.
-        </h2>
-
-      </div>
-
-    </div>
-
-
-
-
-    <div class="tools-grid reveal">
-
-      <div>
-        Adobe Photoshop
-      </div>
-
-      <div>
-        Adobe Illustrator
-      </div>
-
-      <div>
-        Adobe InDesign
-      </div>
-
-      <div>
-        Adobe Premiere Pro
-      </div>
-
-      <div>
-        Canva
-      </div>
-
-      <div>
-        WordPress
-      </div>
-
-      <div>
-        Brevo
-      </div>
-
-      <div>
-        Microsoft 365
-      </div>
-
-      <div>
-        Excel & reporting
-      </div>
-
-      <div>
-        Social analytics
-      </div>
-
-      <div>
-        Montage vidéo
-      </div>
-
-      <div>
-        IA générative
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-
-<!-- ======================================================
-     CERTIFICATIONS
-====================================================== -->
-
-<section class="section certifications-section">
-
-  <div class="container">
-
-    <div class="section-heading reveal">
-
-      <span class="section-number">
-        07
-      </span>
-
-      <div>
-
-        <p class="section-label">
-          Certifications
-        </p>
-
-        <h2>
-          Continuer à apprendre.
-        </h2>
-
-      </div>
-
-    </div>
-
-
-    <div class="certifications-grid reveal">
-
-
-      <article>
-
-        <span>
-          2025
-        </span>
-
-        <h3>
-          Sécurité de l’information
-        </h3>
-
-        <p>
-          UNICEF
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <span>
-          2025
-        </span>
-
-        <h3>
-          Développement Web
-        </h3>
-
-        <p>
-          D-Clic · Organisation internationale de la Francophonie
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <span>
-          2022
-        </span>
-
-        <h3>
-          Advanced English Course
-        </h3>
-
-        <p>
-          World English Institute
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-
-<!-- ======================================================
-     CONTACT
-====================================================== -->
-
-<section
-  class="section contact-section"
-  id="contact"
->
-
-  <div class="container contact-grid">
-
-
-    <div class="contact-intro reveal">
-
-      <p class="section-label">
-        Contact
-      </p>
-
-      <h2>
-
-        Construisons
-        quelque chose
-        qui mérite d’être vu.
-
-      </h2>
-
-      <p>
-
-        Je recherche un stage de 6 mois
-        à partir de janvier 2027
-        et reste ouvert aux collaborations,
-        projets de communication
-        et opportunités créatives.
-
-      </p>
-
-
-      <a
-        href="assets/cv/cv-guy-olivier-nibimpa.pdf"
-        class="button button-light"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Télécharger mon CV ↓
-      </a>
-
-    </div>
-
-
-
-
-    <div class="contact-card reveal">
-
-
-      <a
-        href="mailto:guyoliviernibimpa@gmail.com"
+      <img
+        id="lightboxImage"
+        src=""
+        alt=""
       >
 
-        <span>
-          Email
-        </span>
-
-        <strong>
-          guyoliviernibimpa@gmail.com
-        </strong>
-
-        <i>
-          ↗
-        </i>
-
-      </a>
-
-
-
-
-      <a
-        href="tel:+33776466245"
-      >
-
-        <span>
-          Téléphone
-        </span>
-
-        <strong>
-          +33 7 76 46 62 45
-        </strong>
-
-        <i>
-          ↗
-        </i>
-
-      </a>
-
-
-
-
-      <a
-        href="https://www.linkedin.com/in/guy-olivier-nibimpa-39649b254/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <span>
-          LinkedIn
-        </span>
-
-        <strong>
-          Voir mon profil
-        </strong>
-
-        <i>
-          ↗
-        </i>
-
-      </a>
-
     </div>
 
-  </div>
-
-</section>
-
-
-
-</main>
+  </dialog>
 
 
 
 
 
-<!-- ======================================================
-     FOOTER
-====================================================== -->
+  <!-- JAVASCRIPT -->
 
-<footer>
-
-  <div class="container footer-content">
-
-
-    <div class="footer-brand">
-
-      <span>
-        GO
-      </span>
-
-      <p>
-
-        Guy-Olivier Nibimpa<br>
-
-        Communication digitale & création visuelle
-
-      </p>
-
-    </div>
-
-
-    <p>
-
-      © <span id="year"></span>
-      Guy-Olivier Nibimpa
-
-    </p>
-
-
-    <a href="#accueil">
-
-      Retour en haut ↑
-
-    </a>
-
-  </div>
-
-</footer>
-
-
-
-
-
-<!-- JAVASCRIPT -->
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 
 
 </body>
