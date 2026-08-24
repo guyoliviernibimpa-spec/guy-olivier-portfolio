@@ -2604,3 +2604,177 @@ h4{
   }
 
 }
+
+/* =========================================================
+   ALIGNEMENT DES VISUELS — BL ÉVOLUTION
+========================================================= */
+
+/* Grille propre */
+.project-card-grid{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  gap:22px;
+  align-items:stretch;
+}
+
+
+/* 3 projets sur la première ligne */
+.art-card,
+.art-card-tall{
+  grid-column:span 2;
+}
+
+
+/* 2 grands projets sur la deuxième ligne */
+.art-card-wide{
+  grid-column:span 3;
+}
+
+
+/* Toutes les cartes ont la même structure */
+.art-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+
+  overflow:hidden;
+
+  border:1px solid var(--line);
+  border-radius:26px;
+
+  background:#fff;
+
+  box-shadow:
+    0 12px 35px
+    rgba(18,41,61,.05);
+}
+
+
+/* Même hauteur pour VSME,
+   Société à mission et PRODURABLE */
+
+.art-image,
+.art-card-tall .art-image{
+  width:100%;
+  height:370px;
+
+  display:grid;
+  place-items:center;
+
+  padding:18px;
+
+  background:#edf4f9;
+}
+
+
+/* Les deux grands visuels du bas */
+
+.art-card-wide .art-image{
+  height:390px;
+}
+
+
+/* Les créations restent entières,
+   sans être coupées */
+
+.art-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  transition:
+    transform .4s ease;
+}
+
+
+/* Texte aligné en bas */
+
+.art-copy{
+  flex:1;
+
+  display:flex;
+  flex-direction:column;
+
+  padding:22px 24px 25px;
+}
+
+
+.art-copy h4{
+  margin-top:8px;
+}
+
+
+.art-copy p{
+  margin-top:auto;
+  padding-top:8px;
+}
+
+
+/* Hover premium */
+
+.art-card{
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.art-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 20px 50px
+    rgba(18,41,61,.10);
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media (max-width:900px){
+
+  .project-card-grid{
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .art-card,
+  .art-card-tall,
+  .art-card-wide{
+    grid-column:auto;
+  }
+
+  .art-image,
+  .art-card-tall .art-image,
+  .art-card-wide .art-image{
+    height:350px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:620px){
+
+  .project-card-grid{
+    grid-template-columns:1fr;
+  }
+
+  .art-card,
+  .art-card-tall,
+  .art-card-wide{
+    grid-column:1;
+  }
+
+  .art-image,
+  .art-card-tall .art-image,
+  .art-card-wide .art-image{
+    height:330px;
+  }
+
+}
