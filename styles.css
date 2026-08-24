@@ -520,9 +520,15 @@ h4{
 .hero-portrait{
   width:100%;
   aspect-ratio:1/1.09;
+
   object-fit:cover;
   object-position:center;
+
   border-radius:30px 30px 105px 30px;
+
+  /* Retourne horizontalement la photo */
+  transform:scaleX(-1);
+  transform-origin:center;
 }
 
 .portrait-number{
