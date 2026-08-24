@@ -1,308 +1,425 @@
 /* =========================================================
-   GUY-OLIVIER NIBIMPA
-   PORTFOLIO JAVASCRIPT
+   GUY-OLIVIER NIBIMPA — PORTFOLIO
+   script.js
 ========================================================= */
 
 
 /* =========================================================
-   HEADER AU SCROLL
+   01. ELEMENTS PRINCIPAUX
 ========================================================= */
 
-const header =
-  document.querySelector(
-    ".site-header"
+const header = document.querySelector(".site-header");
+const menuButton = document.querySelector(".menu-button");
+const navigation = document.querySelector(".navigation");
+const navLinks = document.querySelectorAll(".navigation a");
+const revealElements = document.querySelectorAll(".reveal");
+const sections = document.querySelectorAll("section[id]");
+const yearElement = document.getElementById("year");
+
+
+/* =========================================================
+   02. HEADER AU SCROLL
+========================================================= */
+
+function updateHeader() {
+
+  if (!header) return;
+
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 15
   );
 
+}
+
+
+updateHeader();
 
 window.addEventListener(
   "scroll",
-  () => {
-
-    if (!header) {
-      return;
-    }
-
-
-    header.classList.toggle(
-
-      "scrolled",
-
-      window.scrollY > 15
-
-    );
-
+  updateHeader,
+  {
+    passive: true
   }
 );
 
 
 /* =========================================================
-   MENU MOBILE
+   03. MENU MOBILE
 ========================================================= */
 
-const menuButton =
-  document.querySelector(
-    ".menu-button"
+function openMenu() {
+
+  if (!menuButton || !navigation) return;
+
+  navigation.classList.add("open");
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    "true"
   );
 
-
-const navigation =
-  document.querySelector(
-    ".navigation"
+  menuButton.setAttribute(
+    "aria-label",
+    "Fermer le menu"
   );
 
+  document.body.classList.add(
+    "menu-open"
+  );
 
-if (
-  menuButton &&
-  navigation
-) {
+}
 
+
+function closeMenu() {
+
+  if (!menuButton || !navigation) return;
+
+  navigation.classList.remove("open");
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+  menuButton.setAttribute(
+    "aria-label",
+    "Ouvrir le menu"
+  );
+
+  document.body.classList.remove(
+    "menu-open"
+  );
+
+}
+
+
+function toggleMenu() {
+
+  if (!navigation) return;
+
+  const menuIsOpen =
+    navigation.classList.contains("open");
+
+  if (menuIsOpen) {
+
+    closeMenu();
+
+  } else {
+
+    openMenu();
+
+  }
+
+}
+
+
+if (menuButton) {
 
   menuButton.addEventListener(
     "click",
-    () => {
-
-
-      const menuOpen =
-        navigation.classList.toggle(
-          "open"
-        );
-
-
-      menuButton.setAttribute(
-
-        "aria-expanded",
-
-        menuOpen
-
-      );
-
-
-      document.body.classList.toggle(
-
-        "menu-open",
-
-        menuOpen
-
-      );
-
-
-    }
+    toggleMenu
   );
 
 }
 
 
 /* =========================================================
-   FERMER LE MENU APRÈS UN CLIC
+   04. FERMER LE MENU APRÈS UN CLIC
 ========================================================= */
 
-const navigationLinks =
-  document.querySelectorAll(
-    ".navigation a"
+navLinks.forEach(link => {
+
+  link.addEventListener(
+    "click",
+    () => {
+
+      closeMenu();
+
+    }
   );
 
-
-navigationLinks.forEach(
-  link => {
+});
 
 
-    link.addEventListener(
-      "click",
-      () => {
+/* =========================================================
+   05. FERMER LE MENU AVEC ÉCHAP
+========================================================= */
 
+document.addEventListener(
+  "keydown",
+  event => {
 
-        if (navigation) {
+    if (event.key === "Escape") {
 
-          navigation.classList.remove(
-            "open"
-          );
+      closeMenu();
 
-        }
-
-
-        if (menuButton) {
-
-          menuButton.setAttribute(
-
-            "aria-expanded",
-
-            "false"
-
-          );
-
-        }
-
-
-        document.body.classList.remove(
-          "menu-open"
-        );
-
-
-      }
-    );
-
+    }
 
   }
 );
 
 
 /* =========================================================
-   ANIMATION DES ÉLÉMENTS
+   06. RESET MENU SI ON REPASSE SUR DESKTOP
 ========================================================= */
 
-const revealElements =
-  document.querySelectorAll(
-    ".reveal"
-  );
+window.addEventListener(
+  "resize",
+  () => {
+
+    if (window.innerWidth > 900) {
+
+      closeMenu();
+
+    }
+
+  }
+);
 
 
-const observer =
-  new IntersectionObserver(
+/* =========================================================
+   07. ANIMATIONS AU SCROLL
+========================================================= */
 
-    entries => {
+if ("IntersectionObserver" in window) {
 
+  const revealObserver =
+    new IntersectionObserver(
 
-      entries.forEach(
-        entry => {
+      entries => {
 
+        entries.forEach(entry => {
 
-          if (
-            entry.isIntersecting
-          ) {
-
+          if (entry.isIntersecting) {
 
             entry.target.classList.add(
               "visible"
             );
 
+            revealObserver.unobserve(
+              entry.target
+            );
 
           }
 
+        });
 
-        }
-      );
+      },
 
+      {
+        threshold: 0.12,
+        rootMargin:
+          "0px 0px -40px 0px"
+      }
 
-    },
-
-    {
-
-      threshold:
-        0.12
-
-    }
-
-  );
+    );
 
 
-revealElements.forEach(
-  element => {
+  revealElements.forEach(element => {
 
-    observer.observe(
+    revealObserver.observe(
       element
     );
 
-  }
-);
+  });
+
+} else {
+
+  /*
+    Sécurité pour les anciens navigateurs :
+    le contenu reste visible même si
+    IntersectionObserver n'est pas disponible.
+  */
+
+  revealElements.forEach(element => {
+
+    element.classList.add(
+      "visible"
+    );
+
+  });
+
+}
 
 
 /* =========================================================
-   ANNÉE AUTOMATIQUE FOOTER
+   08. LIEN ACTIF DANS LA NAVIGATION
 ========================================================= */
 
-const year =
-  document.getElementById(
-    "year"
-  );
+if (
+  "IntersectionObserver" in window &&
+  sections.length > 0
+) {
+
+  const sectionObserver =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (!entry.isIntersecting) {
+            return;
+          }
 
 
-if (year) {
+          const currentId =
+            entry.target.getAttribute("id");
 
-  year.textContent =
+
+          navLinks.forEach(link => {
+
+            const linkTarget =
+              link.getAttribute("href");
+
+
+            link.classList.toggle(
+
+              "active",
+
+              linkTarget ===
+              `#${currentId}`
+
+            );
+
+          });
+
+        });
+
+      },
+
+      {
+        rootMargin:
+          "-35% 0px -55% 0px",
+
+        threshold: 0
+      }
+
+    );
+
+
+  sections.forEach(section => {
+
+    sectionObserver.observe(
+      section
+    );
+
+  });
+
+}
+
+
+/* =========================================================
+   09. ANNÉE AUTOMATIQUE
+========================================================= */
+
+if (yearElement) {
+
+  yearElement.textContent =
     new Date().getFullYear();
 
 }
 
 
 /* =========================================================
-   NAVIGATION ACTIVE
+   10. SCROLL PROPRE POUR LES ANCRES
 ========================================================= */
 
-const sections =
-  document.querySelectorAll(
-    "section[id]"
-  );
+document.querySelectorAll(
+  'a[href^="#"]'
+).forEach(anchor => {
+
+  anchor.addEventListener(
+    "click",
+    event => {
+
+      const targetId =
+        anchor.getAttribute("href");
 
 
-const sectionObserver =
-  new IntersectionObserver(
+      if (
+        !targetId ||
+        targetId === "#"
+      ) {
 
-    entries => {
+        return;
 
-
-      entries.forEach(
-        entry => {
-
-
-          if (
-            !entry.isIntersecting
-          ) {
-
-            return;
-
-          }
+      }
 
 
-          navigationLinks.forEach(
-            link => {
+      const target =
+        document.querySelector(
+          targetId
+        );
 
 
-              const target =
-                link.getAttribute(
-                  "href"
-                );
+      if (!target) return;
 
 
-              link.classList.toggle(
-
-                "active",
-
-                target ===
-                "#" +
-                entry.target.id
-
-              );
+      event.preventDefault();
 
 
-            }
-          );
+      const headerHeight =
+        header
+          ? header.offsetHeight
+          : 0;
 
 
-        }
-      );
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        headerHeight -
+        15;
 
 
-    },
+      window.scrollTo({
 
-    {
+        top: targetPosition,
 
-      rootMargin:
-        "-35% 0px -55% 0px",
+        behavior: "smooth"
 
-      threshold:
-        0
+      });
 
     }
 
   );
 
+});
 
-sections.forEach(
-  section => {
 
-    sectionObserver.observe(
-      section
-    );
+/* =========================================================
+   11. CHARGEMENT INITIAL
+========================================================= */
+
+window.addEventListener(
+  "load",
+  () => {
+
+    /*
+      Rend immédiatement visibles
+      les éléments déjà présents
+      dans la zone visible au chargement.
+    */
+
+    revealElements.forEach(element => {
+
+      const rect =
+        element.getBoundingClientRect();
+
+
+      if (
+        rect.top <
+        window.innerHeight * 0.95
+      ) {
+
+        element.classList.add(
+          "visible"
+        );
+
+      }
+
+    });
 
   }
 );
