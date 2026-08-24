@@ -1,122 +1,190 @@
 /* =========================================================
-   GUY-OLIVIER NIBIMPA — PORTFOLIO
-   script.js
+   GUY-OLIVIER NIBIMPA — PREMIUM PORTFOLIO V3
 ========================================================= */
 
 
-/* =========================================================
-   01. ELEMENTS PRINCIPAUX
-========================================================= */
+const body = document.body;
 
-const header = document.querySelector(".site-header");
-const menuButton = document.querySelector(".menu-button");
-const navigation = document.querySelector(".navigation");
-const navLinks = document.querySelectorAll(".navigation a");
-const revealElements = document.querySelectorAll(".reveal");
-const sections = document.querySelectorAll("section[id]");
-const yearElement = document.getElementById("year");
+const header =
+  document.querySelector(".site-header");
 
+const menuToggle =
+  document.querySelector(".menu-toggle");
 
-/* =========================================================
-   02. HEADER AU SCROLL
-========================================================= */
+const mobileMenu =
+  document.querySelector(".mobile-menu");
 
-function updateHeader() {
-
-  if (!header) return;
-
-  header.classList.toggle(
-    "scrolled",
-    window.scrollY > 15
+const navLinks =
+  document.querySelectorAll(
+    '.desktop-nav a[href^="#"], .mobile-menu a[href^="#"]'
   );
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+const progressBar =
+  document.getElementById("scrollProgress");
+
+const year =
+  document.getElementById("year");
+
+
+const reduceMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+
+
+/* =========================================================
+   01. HEADER + BARRE DE PROGRESSION
+========================================================= */
+
+function onScroll() {
+
+  const y =
+    window.scrollY;
+
+
+  /* HEADER */
+
+  if (header) {
+
+    header.classList.toggle(
+      "scrolled",
+      y > 20
+    );
+
+  }
+
+
+  /* PROGRESSION */
+
+  if (progressBar) {
+
+    const maxScroll =
+      document.documentElement.scrollHeight
+      - window.innerHeight;
+
+
+    const progress =
+      maxScroll > 0
+        ? Math.min(
+            100,
+            (y / maxScroll) * 100
+          )
+        : 0;
+
+
+    progressBar.style.width =
+      `${progress}%`;
+
+  }
 
 }
 
 
-updateHeader();
+onScroll();
+
 
 window.addEventListener(
   "scroll",
-  updateHeader,
+  onScroll,
   {
     passive: true
   }
 );
 
 
+
 /* =========================================================
-   03. MENU MOBILE
+   02. MENU MOBILE
 ========================================================= */
-
-function openMenu() {
-
-  if (!menuButton || !navigation) return;
-
-  navigation.classList.add("open");
-
-  menuButton.setAttribute(
-    "aria-expanded",
-    "true"
-  );
-
-  menuButton.setAttribute(
-    "aria-label",
-    "Fermer le menu"
-  );
-
-  document.body.classList.add(
-    "menu-open"
-  );
-
-}
-
 
 function closeMenu() {
 
-  if (!menuButton || !navigation) return;
+  if (
+    !menuToggle ||
+    !mobileMenu
+  ) {
 
-  navigation.classList.remove("open");
+    return;
 
-  menuButton.setAttribute(
+  }
+
+
+  menuToggle.setAttribute(
     "aria-expanded",
     "false"
   );
 
-  menuButton.setAttribute(
+
+  menuToggle.setAttribute(
     "aria-label",
     "Ouvrir le menu"
   );
 
-  document.body.classList.remove(
+
+  mobileMenu.classList.remove(
+    "open"
+  );
+
+
+  body.classList.remove(
     "menu-open"
   );
 
 }
 
 
+
 function toggleMenu() {
 
-  if (!navigation) return;
+  if (
+    !menuToggle ||
+    !mobileMenu
+  ) {
 
-  const menuIsOpen =
-    navigation.classList.contains("open");
-
-  if (menuIsOpen) {
-
-    closeMenu();
-
-  } else {
-
-    openMenu();
+    return;
 
   }
+
+
+  const isOpen =
+    mobileMenu.classList.toggle(
+      "open"
+    );
+
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+
+  menuToggle.setAttribute(
+
+    "aria-label",
+
+    isOpen
+      ? "Fermer le menu"
+      : "Ouvrir le menu"
+
+  );
+
+
+  body.classList.toggle(
+    "menu-open",
+    isOpen
+  );
 
 }
 
 
-if (menuButton) {
 
-  menuButton.addEventListener(
+if (menuToggle) {
+
+  menuToggle.addEventListener(
     "click",
     toggleMenu
   );
@@ -124,33 +192,35 @@ if (menuButton) {
 }
 
 
+
+if (mobileMenu) {
+
+  mobileMenu
+    .querySelectorAll("a")
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        closeMenu
+      );
+
+    });
+
+}
+
+
+
 /* =========================================================
-   04. FERMER LE MENU APRÈS UN CLIC
-========================================================= */
-
-navLinks.forEach(link => {
-
-  link.addEventListener(
-    "click",
-    () => {
-
-      closeMenu();
-
-    }
-  );
-
-});
-
-
-/* =========================================================
-   05. FERMER LE MENU AVEC ÉCHAP
+   03. FERMER LE MENU AVEC ESC
 ========================================================= */
 
 document.addEventListener(
   "keydown",
   event => {
 
-    if (event.key === "Escape") {
+    if (
+      event.key === "Escape"
+    ) {
 
       closeMenu();
 
@@ -160,15 +230,18 @@ document.addEventListener(
 );
 
 
+
 /* =========================================================
-   06. RESET MENU SI ON REPASSE SUR DESKTOP
+   04. RESET DU MENU EN DESKTOP
 ========================================================= */
 
 window.addEventListener(
   "resize",
   () => {
 
-    if (window.innerWidth > 900) {
+    if (
+      window.innerWidth > 900
+    ) {
 
       closeMenu();
 
@@ -178,248 +251,643 @@ window.addEventListener(
 );
 
 
+
 /* =========================================================
-   07. ANIMATIONS AU SCROLL
+   05. ANIMATIONS REVEAL
 ========================================================= */
 
-if ("IntersectionObserver" in window) {
+if (
+  reduceMotion ||
+  !("IntersectionObserver" in window)
+) {
+
+
+  revealElements.forEach(
+    element => {
+
+      element.classList.add(
+        "visible"
+      );
+
+    }
+  );
+
+
+} else {
+
 
   const revealObserver =
     new IntersectionObserver(
 
       entries => {
 
-        entries.forEach(entry => {
+        entries.forEach(
+          entry => {
 
-          if (entry.isIntersecting) {
+            if (
+              entry.isIntersecting
+            ) {
 
-            entry.target.classList.add(
-              "visible"
-            );
+              entry.target.classList.add(
+                "visible"
+              );
 
-            revealObserver.unobserve(
-              entry.target
-            );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
 
           }
-
-        });
+        );
 
       },
 
       {
-        threshold: 0.12,
+
+        threshold: 0.1,
+
         rootMargin:
-          "0px 0px -40px 0px"
+          "0px 0px -50px 0px"
+
       }
 
     );
 
 
-  revealElements.forEach(element => {
+  revealElements.forEach(
+    element => {
 
-    revealObserver.observe(
-      element
-    );
+      revealObserver.observe(
+        element
+      );
 
-  });
-
-} else {
-
-  /*
-    Sécurité pour les anciens navigateurs :
-    le contenu reste visible même si
-    IntersectionObserver n'est pas disponible.
-  */
-
-  revealElements.forEach(element => {
-
-    element.classList.add(
-      "visible"
-    );
-
-  });
+    }
+  );
 
 }
 
 
+
 /* =========================================================
-   08. LIEN ACTIF DANS LA NAVIGATION
+   06. NAVIGATION ACTIVE
 ========================================================= */
 
+const navSections = [
+
+  ...document.querySelectorAll(
+    "main section[id]"
+  )
+
+].filter(
+
+  section =>
+
+    [
+      "profil",
+      "experience",
+      "projets",
+      "recherche",
+      "contact"
+    ].includes(
+      section.id
+    )
+
+);
+
+
+
 if (
-  "IntersectionObserver" in window &&
-  sections.length > 0
+  "IntersectionObserver" in window
 ) {
+
 
   const sectionObserver =
     new IntersectionObserver(
 
       entries => {
 
-        entries.forEach(entry => {
 
-          if (!entry.isIntersecting) {
-            return;
-          }
+        const visible =
+          entries
+
+            .filter(
+              entry =>
+                entry.isIntersecting
+            )
+
+            .sort(
+              (a, b) =>
+                b.intersectionRatio
+                - a.intersectionRatio
+            )[0];
 
 
-          const currentId =
-            entry.target.getAttribute("id");
+        if (!visible) {
+
+          return;
+
+        }
 
 
-          navLinks.forEach(link => {
-
-            const linkTarget =
-              link.getAttribute("href");
+        navLinks.forEach(
+          link => {
 
 
             link.classList.toggle(
 
               "active",
 
-              linkTarget ===
-              `#${currentId}`
+              link.getAttribute(
+                "href"
+              ) ===
+              `#${visible.target.id}`
 
             );
 
-          });
-
-        });
+          }
+        );
 
       },
 
       {
+
         rootMargin:
           "-35% 0px -55% 0px",
 
-        threshold: 0
+        threshold:
+          [
+            0,
+            0.1,
+            0.25,
+            0.5
+          ]
+
       }
 
     );
 
 
-  sections.forEach(section => {
+  navSections.forEach(
+    section => {
 
-    sectionObserver.observe(
-      section
-    );
+      sectionObserver.observe(
+        section
+      );
 
-  });
-
-}
-
-
-/* =========================================================
-   09. ANNÉE AUTOMATIQUE
-========================================================= */
-
-if (yearElement) {
-
-  yearElement.textContent =
-    new Date().getFullYear();
+    }
+  );
 
 }
 
 
+
 /* =========================================================
-   10. SCROLL PROPRE POUR LES ANCRES
+   07. SCROLL FLUIDE AVEC OFFSET DU HEADER
 ========================================================= */
 
-document.querySelectorAll(
-  'a[href^="#"]'
-).forEach(anchor => {
-
-  anchor.addEventListener(
-    "click",
-    event => {
-
-      const targetId =
-        anchor.getAttribute("href");
+document
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
+  .forEach(
+    anchor => {
 
 
-      if (
-        !targetId ||
-        targetId === "#"
-      ) {
+      anchor.addEventListener(
 
-        return;
+        "click",
 
-      }
+        event => {
 
 
-      const target =
-        document.querySelector(
-          targetId
-        );
+          const href =
+            anchor.getAttribute(
+              "href"
+            );
 
 
-      if (!target) return;
+          if (
+            !href ||
+            href === "#"
+          ) {
+
+            return;
+
+          }
 
 
-      event.preventDefault();
+          const target =
+            document.querySelector(
+              href
+            );
 
 
-      const headerHeight =
-        header
-          ? header.offsetHeight
-          : 0;
+          if (!target) {
+
+            return;
+
+          }
 
 
-      const targetPosition =
-        target.getBoundingClientRect().top +
-        window.scrollY -
-        headerHeight -
-        15;
+          event.preventDefault();
 
 
-      window.scrollTo({
+          const offset =
+            (
+              header
+                ? header.offsetHeight
+                : 0
+            )
+            + 14;
 
-        top: targetPosition,
 
-        behavior: "smooth"
+          const top =
+            target
+              .getBoundingClientRect()
+              .top
+            +
+            window.scrollY
+            -
+            offset;
 
-      });
+
+          window.scrollTo({
+
+            top,
+
+            behavior:
+              reduceMotion
+                ? "auto"
+                : "smooth"
+
+          });
+
+        }
+
+      );
 
     }
 
   );
 
-});
 
 
 /* =========================================================
-   11. CHARGEMENT INITIAL
+   08. LIGHTBOX / AGRANDISSEMENT DES PROJETS
 ========================================================= */
 
-window.addEventListener(
-  "load",
-  () => {
+const lightbox =
+  document.getElementById(
+    "lightbox"
+  );
 
-    /*
-      Rend immédiatement visibles
-      les éléments déjà présents
-      dans la zone visible au chargement.
-    */
+const lightboxImage =
+  document.getElementById(
+    "lightboxImage"
+  );
 
-    revealElements.forEach(element => {
+const lightboxClose =
+  document.querySelector(
+    ".lightbox-close"
+  );
 
-      const rect =
-        element.getBoundingClientRect();
+
+
+function openLightbox(
+  src,
+  alt
+) {
+
+
+  if (
+    !lightbox ||
+    !lightboxImage ||
+    !src
+  ) {
+
+    return;
+
+  }
+
+
+  lightboxImage.src =
+    src;
+
+
+  lightboxImage.alt =
+    alt ||
+    "Aperçu du projet";
+
+
+  if (
+    typeof lightbox.showModal
+    === "function"
+  ) {
+
+
+    lightbox.showModal();
+
+
+  } else {
+
+
+    lightbox.setAttribute(
+      "open",
+      ""
+    );
+
+  }
+
+}
+
+
+
+function closeLightbox() {
+
+
+  if (!lightbox) {
+
+    return;
+
+  }
+
+
+  if (
+
+    typeof lightbox.close
+      === "function"
+
+    &&
+
+    lightbox.open
+
+  ) {
+
+
+    lightbox.close();
+
+
+  } else {
+
+
+    lightbox.removeAttribute(
+      "open"
+    );
+
+  }
+
+
+  if (lightboxImage) {
+
+    lightboxImage.src =
+      "";
+
+
+    lightboxImage.alt =
+      "";
+
+  }
+
+}
+
+
+
+/* OUVERTURE */
+
+document
+  .querySelectorAll(
+    ".lightbox-trigger"
+  )
+  .forEach(
+    trigger => {
+
+
+      trigger.addEventListener(
+
+        "click",
+
+        () => {
+
+
+          const src =
+
+            trigger.dataset.full
+
+            ||
+
+            trigger
+              .querySelector("img")
+              ?.src;
+
+
+          const alt =
+
+            trigger
+              .querySelector("img")
+              ?.alt;
+
+
+          openLightbox(
+            src,
+            alt
+          );
+
+        }
+
+      );
+
+    }
+
+  );
+
+
+
+/* BOUTON FERMER */
+
+if (lightboxClose) {
+
+  lightboxClose.addEventListener(
+    "click",
+    closeLightbox
+  );
+
+}
+
+
+
+/* CLIC À L'EXTÉRIEUR */
+
+if (lightbox) {
+
+  lightbox.addEventListener(
+
+    "click",
+
+    event => {
 
 
       if (
-        rect.top <
-        window.innerHeight * 0.95
+        event.target
+        === lightbox
       ) {
 
-        element.classList.add(
-          "visible"
-        );
+        closeLightbox();
 
       }
 
-    });
+    }
+
+  );
+
+}
+
+
+
+/* ESC */
+
+document.addEventListener(
+
+  "keydown",
+
+  event => {
+
+
+    if (
+
+      event.key ===
+        "Escape"
+
+      &&
+
+      lightbox
+      ?.open
+
+    ) {
+
+      closeLightbox();
+
+    }
 
   }
+
+);
+
+
+
+/* =========================================================
+   09. DÉTECTION DES IMAGES MANQUANTES
+========================================================= */
+
+document
+  .querySelectorAll("img")
+  .forEach(
+    image => {
+
+
+      image.addEventListener(
+
+        "error",
+
+        () => {
+
+
+          const parent =
+            image.closest(
+
+              "button, figure, article, .portrait-frame"
+
+            );
+
+
+          if (parent) {
+
+            parent.classList.add(
+              "image-error"
+            );
+
+          }
+
+
+          console.warn(
+
+            "Image introuvable :",
+
+            image.getAttribute(
+              "src"
+            )
+
+          );
+
+        }
+
+      );
+
+    }
+
+  );
+
+
+
+/* =========================================================
+   10. ANNÉE AUTOMATIQUE
+========================================================= */
+
+if (year) {
+
+  year.textContent =
+    new Date()
+      .getFullYear();
+
+}
+
+
+
+/* =========================================================
+   11. SECURITE AU CHARGEMENT
+========================================================= */
+
+window.addEventListener(
+
+  "load",
+
+  () => {
+
+
+    /*
+      Si certains éléments sont déjà visibles
+      au chargement, on les affiche directement.
+    */
+
+
+    revealElements.forEach(
+      element => {
+
+
+        const rect =
+          element.getBoundingClientRect();
+
+
+        if (
+
+          rect.top
+          <
+          window.innerHeight
+          * 0.95
+
+        ) {
+
+          element.classList.add(
+            "visible"
+          );
+
+        }
+
+      }
+
+    );
+
+  }
+
 );
