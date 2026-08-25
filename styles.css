@@ -2775,8 +2775,8 @@ h4{
 
 }
 
-/* RETOURNER LA PHOTO HORIZONTALEMENT */
-.portrait-frame > .hero-portrait{
-  transform: scaleX(-1) !important;
-  transform-origin: center center;
+/* RETOURNER UNIQUEMENT LA PHOTO */
+.portrait-frame img.hero-portrait{
+  transform: rotateY(180deg) !important;
+  -webkit-transform: rotateY(180deg) !important;
 }
