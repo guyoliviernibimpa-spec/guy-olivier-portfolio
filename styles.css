@@ -2774,3 +2774,9 @@ h4{
   }
 
 }
+
+/* RETOURNER LA PHOTO HORIZONTALEMENT */
+.portrait-frame > .hero-portrait{
+  transform: scaleX(-1) !important;
+  transform-origin: center center;
+}
